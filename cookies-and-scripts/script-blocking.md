@@ -18,6 +18,8 @@ Okito decides a script's category in this order:
 
 Necessary scripts, the Okito script itself and scripts with no known category are never blocked.
 
+Scripts served from your own domain (your theme, jQuery, page builders, forms, sliders) run without waiting for consent, because they don't store or read tracking data. Okito holds back a script on your own domain only when it matches your rules or scan results, or when its path is clearly analytics or advertising (for example Matomo, a pixel plugin, or a Google tag served through Google tag gateway).
+
 Okito blocks scripts that are in the page when it loads and scripts that your page or tag manager adds later.
 
 ## Blocking rules
