@@ -45,4 +45,4 @@ The page must be reachable over public HTTPS, without a password, and must conta
 
 ## Still stuck?
 
-Email [info@okito.com](mailto:info@okito.com) with your website address and what you see. A screenshot of the `?okito_debug=1` box helps.
+Contact [Okito support](support.md). For missing consent mode or TCF signals on Google tags, contact Okito before Google: Google support asks for proof that you contacted your CMP first.

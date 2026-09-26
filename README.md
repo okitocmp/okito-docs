@@ -37,6 +37,8 @@ You set everything up in the Okito dashboard at [app.okito.com](https://app.okit
 
 ## Help
 
+For any consent mode or IAB TCF problem, contact [Okito support](help/support.md) first, not Google.
+
 * Email: [info@okito.com](mailto:info@okito.com)
 * Dashboard: [app.okito.com](https://app.okito.com)
 

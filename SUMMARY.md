@@ -98,6 +98,7 @@
 
 ## Help
 
+* [Support](help/support.md)
 * [Troubleshooting](help/troubleshooting.md)
 * [FAQ](help/faq.md)
 * [Legal notice](help/legal-notice.md)
