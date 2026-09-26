@@ -2,6 +2,10 @@
 
 * [Welcome to Okito](README.md)
 
+## Release notes
+
+* [Launch: Google Consent Mode v2](release-notes/google-consent-mode-launch.md)
+
 ## Getting started
 
 * [Quick start](getting-started/quick-start.md)
