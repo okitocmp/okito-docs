@@ -1,0 +1,11 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Okito Documentation
+  structure:
+    - type: space
+      key: okito-docs
+      title: Okito Documentation
+      path: /
+      default: true
+      content:
+        directory: ./
