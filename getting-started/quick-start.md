@@ -29,7 +29,7 @@ The **Install banner** page shows the code for your site. For most websites, you
 <script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY"></script>
 ```
 
-Using WordPress, Shopify, Webflow, Framer or Google Tag Manager? Use the matching guide in [Installation](../installation/installation.md); those integrations add the code for you.
+Using WordPress, Shopify, Webflow, Framer or Google Tag Manager? Use the matching guide in [Installation](../installation/README.md); those integrations add the code for you.
 
 ## 4. Check it works
 

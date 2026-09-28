@@ -8,6 +8,16 @@ description: Confirm Okito is installed correctly on your live site.
 
 On **Install banner**, click **Verify**. Okito opens your live site and looks for the Okito script with your website key.
 
+When the script is found, Okito also checks the order of the tags written in your page's HTML and lists what to fix:
+
+* the Consent Mode snippet is missing or comes after Google Tag Manager or gtag.js;
+* your banner uses IAB TCF but the TCF stub is missing or comes after Google tags (or the page has a stub it doesn't need);
+* the [early blocker](../cookies-and-scripts/script-blocking.md#early-blocker) is not the first script, or has `async` or `defer`;
+* an optimisation plugin delays the Okito script or the Consent Mode snippet;
+* the Okito script is on the page twice, or another consent tool is installed.
+
+This check only sees the HTML: tags that Google Tag Manager or other scripts add later are not included. The [consent mode check](../google/consent-mode-check.md) and [debug mode](../google/debug-mode.md) look at what actually ran.
+
 Verification needs a public HTTPS address. It fails on `localhost`, password-protected staging sites and sites that block unknown visitors.
 
 ## 2. Look at the banner

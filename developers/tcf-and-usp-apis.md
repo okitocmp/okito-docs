@@ -6,7 +6,7 @@ description: The standard IAB APIs that ad tech and your own code can use.
 
 ## `__tcfapi` (IAB TCF)
 
-Available when [IAB TCF](../compliance/iab-tcf.md) is on. Okito implements the IAB TCF CMP API (version 2.4). The TCF stub in the Consent Mode snippet and the plugins makes `__tcfapi` available before the Okito script loads; calls made then are queued. Sites whose banner cannot use IAB TCF get no stub, and `__tcfapi` is not defined for visitors in GDPR regions there. If a stub is on the page but TCF is off (for example a plan that includes TCF with TCF turned off), queued calls are answered with `cmpStatus: "error"` and the stub is removed for visitors in GDPR regions; other visitors get `gdprApplies: false`. Google tags then follow Google Consent Mode.
+Available when [IAB TCF](../compliance/iab-tcf.md) is on. Okito implements the IAB TCF CMP API (version 2.4). The TCF stub in the Consent Mode snippet, the plugins and the GTM template (when **My banner uses IAB TCF** is ticked) makes `__tcfapi` available before the Okito script loads; calls made then are queued. Sites whose banner cannot use IAB TCF get no stub, and `__tcfapi` is not defined for visitors in GDPR regions there. If a stub is on the page but TCF is off (for example a plan that includes TCF with TCF turned off, or the GTM template's option left ticked), queued calls are answered with `cmpStatus: "error"` and the stub is removed for visitors in GDPR regions; other visitors get `gdprApplies: false`. Google tags then follow Google Consent Mode.
 
 | Command | Returns |
 | --- | --- |
@@ -27,7 +27,7 @@ __tcfapi('addEventListener', 2, function (tcData, success) {
 });
 ```
 
-Iframes can use the standard `postMessage` protocol with the `__tcfapiLocator` frame.
+Iframes can use the standard `postMessage` protocol with the `__tcfapiLocator` frame. With the GTM template, that frame appears only once the Okito script has loaded (see [Google Tag Manager](../installation/google-tag-manager.md#iab-tcf-sites)).
 
 ## `__uspapi` (US Privacy)
 

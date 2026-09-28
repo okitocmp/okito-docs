@@ -44,6 +44,17 @@ To let visitors switch the script with a single [service](services.md), add `dat
         src="https://static.hotjar.com/c/hotjar-123456.js?sv=6"></script>
 ```
 
+## Iframes
+
+Put the address in `data-src` instead of `src` and add the category. Okito shows a placeholder and loads the iframe once the visitor consents:
+
+```html
+<iframe data-src="https://www.youtube.com/embed/VIDEO_ID" data-cookie-category="advertisement"
+        width="560" height="315" data-okito-label="YouTube"></iframe>
+```
+
+`data-okito-label` is the name shown in the placeholder (optional; the embed's host name otherwise). Okito uses `data-src` only together with `data-cookie-category`: an iframe with only `data-src` (as lazy-loading plugins write it) is left to its lazy loader, and held when the loader sets its `src`. The placeholder text follows the banner language. Known embeds such as YouTube and Google Maps are held automatically too; see [Embedded videos, maps and posts](script-blocking.md#embedded-videos-maps-and-posts). Add `data-okito-ignore` to an iframe Okito must never hold.
+
 ## When to use it
 
 * The script is written directly into your page's HTML, so it can run before Okito. The [early blocker](script-blocking.md#early-blocker) holds known trackers without marking them.

@@ -10,16 +10,16 @@ You set everything up in the Okito dashboard at [app.okito.com](https://app.okit
 
 ## What you can do with Okito
 
-| Area                       | What Okito does                                                                                                               |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **Consent banner**         | A banner and preference centre you design in Banner Builder, in 50+ languages, with GDPR, US state law or combined templates. |
-| **Cookie scanning**        | Crawls your pages, lists the cookies it finds and puts them in the right category.                                            |
-| **Script blocking**        | Holds back tracking scripts until the visitor consents to their category or service.                                          |
-| **Google Consent Mode v2** | Sets the consent mode default and update commands, with basic and advanced configurations.                                    |
-| **IAB TCF**                | A registered IAB Europe CMP (CMP ID 508) with TC string, Additional Consent and the `__tcfapi` API.                           |
-| **US privacy**             | "Do Not Sell or Share" controls, Global Privacy Control and the `__uspapi` API.                                               |
-| **Records and requests**   | Consent records for audits and a public form for privacy requests.                                                            |
-| **Checks**                 | Debug mode on any page and a consent mode check across all scanned pages.                                                     |
+| Area | What Okito does |
+| --- | --- |
+| **Consent banner** | A banner and preference centre you design in Banner Builder, in 50+ languages, with GDPR, US state law or combined templates. |
+| **Cookie scanning** | Crawls your pages, lists the cookies it finds and puts them in the right category. |
+| **Script blocking** | Holds back tracking scripts until the visitor consents to their category or service. |
+| **Google Consent Mode v2** | Sets the consent mode default and update commands, with basic and advanced configurations. |
+| **IAB TCF** | A registered IAB Europe CMP (CMP ID 508) with TC string, Additional Consent and the `__tcfapi` API. |
+| **US privacy** | "Do Not Sell or Share" controls, Global Privacy Control and the `__uspapi` API. |
+| **Records and requests** | Consent records for audits and a public form for privacy requests. |
+| **Checks** | Debug mode on any page and a consent mode check across all scanned pages. |
 
 ## Where to start
 
@@ -27,8 +27,8 @@ You set everything up in the Okito dashboard at [app.okito.com](https://app.okit
 [quick-start.md](getting-started/quick-start.md)
 {% endcontent-ref %}
 
-{% content-ref url="installation/installation.md" %}
-[installation.md](installation/installation.md)
+{% content-ref url="installation/README.md" %}
+[README.md](installation/README.md)
 {% endcontent-ref %}
 
 {% content-ref url="google/google-consent-mode.md" %}

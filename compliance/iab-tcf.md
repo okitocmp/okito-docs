@@ -23,7 +23,16 @@ Missing consent mode or TCF signals on your Google tags? Contact [Okito support]
 
 * The first layer uses IAB Europe's official text, listing the purposes, special features and the number of partners. These texts are locked in Banner Builder and translated with IAB's official translations.
 * The preference centre shows purposes, special purposes, features, special features, stacks and the vendor list, including legitimate interest and the right to object.
-* The visitor's choice is encoded in a **TC string**, stored in the `euconsent-v2` cookie and available through `__tcfapi`.
+* The visitor's choice is encoded in a **TC string**, stored in the `euconsent-v2` cookie and available through `__tcfapi`. The TC string lists as disclosed exactly the vendors on your list.
+
+## When visitors are asked again
+
+Besides after 13 months, the banner asks again when:
+
+* you add a vendor to your vendor list that the visitor was not shown when they chose, or
+* IAB updates the TCF policy version.
+
+Until the visitor chooses again, their earlier choice stays in effect; the new vendors have no consent until then. A routine Global Vendor List update, or removing a vendor from your list, does not ask again.
 
 ## Where TCF applies
 

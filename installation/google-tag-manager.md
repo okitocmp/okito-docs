@@ -17,6 +17,7 @@ If your banner uses IAB TCF, tick **My banner uses IAB TCF** in the tag; see [IA
 3. Fill in the tag:
    * **Website Key**: copy it from the Okito dashboard (Install banner).
    * **Where consent is not required (e.g. Japan)**: use the same option as in Banner Builder (see [Where consent is not required](../compliance/consent-not-required.md)).
+   * **My banner uses IAB TCF**: tick this if IAB TCF is on in Okito.
    * **US visitors follow the opt-out model**: tick this if your banner uses the **US State Laws** or **GDPR & US State Laws** template.
 4. Trigger: **Consent Initialization - All Pages**. This trigger runs before every other tag.
 5. Save, then **Submit** and publish the container.

@@ -8,11 +8,27 @@ On an [IAB TCF](../compliance/iab-tcf.md) site, Google tags can get consent from
 
 ## Google as a TCF vendor
 
-Google is IAB TCF vendor **755**. Make sure it is in your vendor list (**IAB TCF** page in the dashboard) if you use Google advertising products. Google reads its advertising consent from the TC string.
+Google is IAB TCF vendor **755**. Okito adds it to the vendor list of every IAB TCF site automatically, so you don't need to add it yourself. Google reads its advertising consent from the TC string.
 
 ## Google ads consent from the TC string
 
 Turn on **Google ads consent from the TC string** (Banner Builder → General, under IAB TCF). Okito then sets `enableAdvertiserConsentMode` in the TC data, so Google tags read `ad_storage`, `ad_user_data` and `ad_personalization` from the TC string. `analytics_storage` is still sent through consent mode.
+
+## TCF purposes and consent mode
+
+On IAB TCF sites, Okito sends the consent mode update from the TCF purposes the visitor accepted, based on the rule Google uses when it reads a TC string. Storage needs purpose 1 (store and/or access information on a device), and the advertising types need consent for Google as a vendor (755).
+
+| Consent mode type | Granted when the visitor accepted |
+| --- | --- |
+| `ad_storage` | Google, purpose 1 and an advertising purpose (2, 3 or 4) |
+| `ad_user_data` | Google, purposes 1 and 7 |
+| `ad_personalization` | Google, purposes 3 and 4 |
+| `analytics_storage` | Purpose 1, and purpose 8 or 9 |
+| `functionality_storage` | Purpose 1 |
+| `personalization_storage` | Purpose 1, and purpose 5 or 6 |
+| `security_storage` | Always granted |
+
+`ad_storage` asks for an advertising purpose on top of Google's rule, so a visitor who refused every advertising purpose never grants it (tags of other ad vendors in Google Tag Manager often check `ad_storage`). A category switched on in the TCF preferences (Advertisement, Analytics, Functional) grants its types too; for the advertising types only together with consent for Google. Because Okito always lists Google, **Accept all** grants everything. The consent records use the same purpose rule without the vendor condition.
 
 ## Additional Consent
 
