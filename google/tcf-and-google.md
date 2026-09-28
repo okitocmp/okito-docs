@@ -20,7 +20,7 @@ Turn on **Additional Consent (AC String)** to ask for consent for Google's ad te
 
 ## Load order and the TCF stub
 
-Google tags look for the TCF API (`__tcfapi`) when they start. The Okito Consent Mode snippet, the WordPress plugin, the Shopify app and the GTM template add a small **TCF stub** at the top of the page, so `__tcfapi` exists before any Google tag runs, even if the Okito script loads later. [Debug mode](debug-mode.md) warns if Google tags ran before the TCF API was available.
+Google tags look for the TCF API (`__tcfapi`) when they start. When your banner can use IAB TCF (TCF is on, or your plan includes TCF), the Okito Consent Mode snippet, the WordPress plugin and the Shopify app add a small **TCF stub** at the top of the page, so `__tcfapi` exists before any Google tag runs, even if the Okito script loads later. The GTM template adds it when **My banner uses IAB TCF** is ticked (see [IAB TCF sites](../installation/google-tag-manager.md#iab-tcf-sites)). On sites without TCF, Google tags follow Google Consent Mode. [Debug mode](debug-mode.md) warns if Google tags ran before the TCF API was available.
 
 ## Where TCF applies
 

@@ -19,17 +19,21 @@ Don't paste the Okito script into your theme as well, and deactivate other cooki
 
 ## What the plugin does
 
-* **Consent Mode defaults first.** It prints the Google Consent Mode defaults and the IAB TCF stub at the very top of `<head>`, before other plugins' Google tags.
+* **Consent Mode defaults first.** It prints the Google Consent Mode defaults (and the IAB TCF stub, when your banner can use IAB TCF) at the very top of `<head>`, before other plugins' Google tags.
 * **Okito script.** It loads `https://cdn.okito.com/js/YOUR_WEBSITE_KEY` on every public page.
 * **Caching and optimisation plugins.** It keeps Okito's code out of the delay, defer and combine features of WP Rocket, LiteSpeed Cache, Autoptimize, SiteGround Optimizer, W3 Total Cache and Cloudflare Rocket Loader, so consent always loads first.
 * **WP Consent API.** It passes the visitor's choice to the [WP Consent API](../integrations/wp-consent-api.md), so Site Kit by Google and other compatible plugins follow it.
 * **Site Health.** Under **Tools → Site Health** it checks that the banner is set up, that only one consent plugin is active, that the WP Consent API and Site Kit Consent Mode are on, and that consent defaults load before Google tags.
 
+## Early blocker
+
+Turn on **Okito → Settings → Early blocker** to hold back tracking tags that your theme or other plugins write into the page (Meta Pixel, TikTok, Hotjar, Microsoft Clarity, LinkedIn and others) until the visitor consents. It is off by default. Your theme, other plugins, libraries and Google tags are not affected; see [Early blocker](../cookies-and-scripts/script-blocking.md#early-blocker). Check your site after turning it on.
+
 ## Filters for developers
 
 | Filter | Default | Use |
 | --- | --- | --- |
-| `okito_print_consent_mode_defaults` | `true` | Return `false` for [basic consent mode](../google/basic-and-advanced.md): the plugin then prints only the TCF stub, not the consent mode defaults. |
+| `okito_print_consent_mode_defaults` | `true` | Return `false` for [basic consent mode](../google/basic-and-advanced.md): the plugin then prints only the TCF stub (if your banner can use IAB TCF), not the consent mode defaults. |
 | `okito_consent_mode_ads_data_redaction` | `true` | Value of `ads_data_redaction` in the defaults (from version 1.1.4). |
 | `okito_consent_mode_url_passthrough` | `false` | Set `url_passthrough` in the defaults (from version 1.1.4). |
 

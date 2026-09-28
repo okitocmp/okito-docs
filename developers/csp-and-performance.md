@@ -28,9 +28,13 @@ Don't add an `integrity` hash to the Okito script. Its content changes when you 
 
 ## Page speed
 
-* The Okito script is served from a CDN. Browsers keep a copy and check for changes on each page load; when nothing changed, the check is a small "not modified" response. That is also why your banner changes appear right after you save.
+* The embed code loads a small language loader, which then loads your banner script (about 25 KB compressed). Both come from `cdn.okito.com`, over the same connection.
+* Browsers reuse the language loader for 5 minutes, so later pages skip that request.
+* The banner script holds your consent settings and depends on the visitor's region, so browsers check it for changes on each page load. When nothing changed, the check is a small "not modified" response. That is also why your banner changes appear right after you save.
+* Your blocking rules and scanned scripts are built into the banner script, so they apply to the first scripts your page adds, without an extra request.
 * The banner renders inside a Shadow DOM, so your site's CSS doesn't affect it and its CSS doesn't affect your site.
 * The Consent Mode snippet is tiny and inline, so it adds no network request.
+* Include the Okito code once. If it is included twice (for example by the theme and a plugin), the banner still loads once.
 
 ## Single-page apps
 

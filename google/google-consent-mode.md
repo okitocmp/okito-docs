@@ -12,6 +12,10 @@ Consent mode is a way to pass consent choices to Google tags. It is not designed
 
 Google Consent Mode is included from the Standard plan.
 
+{% hint style="info" %}
+Missing consent mode or TCF signals on your Google tags? Contact [Okito support](../help/support.md) first, not Google. Google support asks for proof that you contacted your CMP before it looks into consent mode questions.
+{% endhint %}
+
 ## What Okito does
 
 1. **Default**: before any Google tag runs, the Okito Consent Mode snippet (or the WordPress plugin, Shopify app or GTM template) sets the default consent state. Visitors in regions where your banner asks for consent first start **denied**; other visitors start with the state you choose in [Where consent is not required](../compliance/consent-not-required.md).

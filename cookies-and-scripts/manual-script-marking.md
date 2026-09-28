@@ -7,7 +7,13 @@ description: Mark scripts in your HTML so they only run after consent.
 For full control, mark a script in your HTML so the browser doesn't run it on its own. Okito runs it once the visitor consents to its category.
 
 1. Change `type` to `text/plain`.
-2. Add `data-cookie-category` with the category: `functional`, `analytics`, `performance` or `advertisement`.
+2. Add `data-cookie-category` with the category: `necessary`, `functional`, `analytics`, `performance` or `advertisement`.
+
+A script marked `necessary` runs as soon as the page loads, without waiting for a choice.
+
+Markings from other consent tools also work: the `data-cookiecategory` spelling, and the category names `marketing`, `advertising`, `ads` and `targeting` (advertisement), `statistics` and `stats` (analytics), `preferences` and `functionality` (functional), `essential` and `required` (necessary). Other names are not recognised, and those scripts are not run by Okito.
+
+A marked script always waits for consent to its category, even when its address matches no known tracker and even when a blocking rule allows that address.
 
 ```html
 <!-- Before -->
@@ -40,7 +46,7 @@ To let visitors switch the script with a single [service](services.md), add `dat
 
 ## When to use it
 
-* The script is written into your page above the Okito script.
+* The script is written directly into your page's HTML, so it can run before Okito. The [early blocker](script-blocking.md#early-blocker) holds known trackers without marking them.
 * You use [basic consent mode](../google/basic-and-advanced.md) and your Google tag is written directly in the page.
 * The script's URL is too generic for a blocking rule.
 

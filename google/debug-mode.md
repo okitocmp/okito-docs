@@ -25,7 +25,7 @@ The box names the tag that ran too early (for example `gtag("js")` or Google Tag
 1. First check whether that tag is served through [Google tag gateway](google-tag-gateway.md) (a path on your own domain). If it is, follow the Google tag gateway steps.
 2. Otherwise move the Okito Consent Mode snippet and the Okito script above Google Tag Manager / gtag.js in `<head>`. See [Load order](load-order.md).
 
-On IAB TCF sites, it also warns when Google tags ran before the TCF API was available.
+On IAB TCF sites, it also warns when Google tags ran before the TCF API was available. With the GTM template, tick **My banner uses IAB TCF** in the tag; see [IAB TCF sites](../installation/google-tag-manager.md#iab-tcf-sites).
 
 ## Basic mode and consent mode off
 

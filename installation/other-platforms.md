@@ -21,4 +21,4 @@ Paste the code from **Install banner** into the platform's head code field, as e
 
 * Put the Okito code **before** analytics and marketing code in the same field.
 * If the platform adds its own tracking (for example built-in Google Analytics), check whether it runs before your head code. If it does, turn the built-in integration off and add those tags yourself after Okito, or through GTM.
-* Some builders load custom code late. If [debug mode](../google/debug-mode.md) shows a yellow box, use [Google Tag Manager](google-tag-manager.md) with the Okito template instead.
+* Some builders load custom code late. If [debug mode](../google/debug-mode.md) shows a yellow box, use [Google Tag Manager](google-tag-manager.md) with the Okito template instead. On IAB TCF sites, see [IAB TCF sites](google-tag-manager.md#iab-tcf-sites).

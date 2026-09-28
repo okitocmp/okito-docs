@@ -14,7 +14,7 @@ Okito supports both; **advanced is the default**. Choose in Banner Builder → G
 ## Advanced configuration (Google tags are not blocked)
 
 1. In Banner Builder → General → **Google tags**, keep **Advanced: Consent Mode signals**.
-2. Copy the Consent Mode snippet from **Install banner** (or Code Generator) and paste it at the top of `<head>`, followed by the Okito script, before Google Tag Manager or gtag.js. With Google Tag Manager, use the [Okito template](../installation/google-tag-manager.md) on the Consent Initialization - All Pages trigger instead. The WordPress plugin and the Shopify app add both for you.
+2. Copy the Consent Mode snippet from **Install banner** (or Code Generator) and paste it at the top of `<head>`, followed by the Okito script, before Google Tag Manager or gtag.js. With Google Tag Manager, use the [Okito template](../installation/google-tag-manager.md) on the Consent Initialization - All Pages trigger instead (on IAB TCF sites, see [IAB TCF sites](../installation/google-tag-manager.md#iab-tcf-sites)). The WordPress plugin and the Shopify app add both for you.
 3. Leave your Google tags as they are. They load with the default consent state and receive Okito's update when the visitor chooses. Okito's [script blocking](../cookies-and-scripts/script-blocking.md) does not block Google tags in this mode.
 4. Open a page with `?okito_debug=1` and check that the debug box is green (see [Debug mode](debug-mode.md)).
 

@@ -21,18 +21,18 @@ Click **Save Banner** to apply your changes. There is no separate publish step: 
 
 ## Compliance settings (General tab)
 
-| Setting | What it does | Page |
-| --- | --- | --- |
-| Consent template | GDPR, US State Laws, or GDPR & US State Laws. | [Consent templates](consent-templates.md) |
-| Auto Cookie Detection | Uses scan results to categorise cookies and scripts. | [Cookie scanner](../cookies-and-scripts/cookie-scanner.md) |
-| Cross-Device Consent | Syncs a signed-in user's choice across devices. | [Cross-device consent](../developers/cross-device-consent.md) |
-| Google Consent Mode Integration | Sends consent mode signals to Google tags. | [Google Consent Mode v2](../google/google-consent-mode.md) |
-| Google tags | Advanced, basic or off. | [Basic and advanced](../google/basic-and-advanced.md) |
-| Redact ads data / Pass ad click information through URLs | `ads_data_redaction` and `url_passthrough`. | [Settings reference](../google/settings-reference.md) |
-| Where consent is not required | Banner and measurement outside the regions that need consent. | [Where consent is not required](../compliance/consent-not-required.md) |
-| IAB TCF | Turns the banner into an IAB TCF banner with TC string. | [IAB TCF](../compliance/iab-tcf.md) |
-| Google ads consent from the TC string | Lets Google read ad consent from the TC string. | [IAB TCF and Google](../google/tcf-and-google.md) |
-| Additional Consent (AC String) | Google Additional Consent for ad tech providers not in the TCF. | [IAB TCF](../compliance/iab-tcf.md) |
-| Script Blocking | Holds back tracking scripts until consent. | [Script blocking](../cookies-and-scripts/script-blocking.md) |
+The Compliance card has three groups. The consent template is chosen at the top of the General tab.
+
+| Group | Setting | What it does | Page |
+| --- | --- | --- | --- |
+| Google Consent Mode | Google tags | Advanced, basic or off. | [Basic and advanced](../google/basic-and-advanced.md) |
+| Google Consent Mode | Redact ads data / Pass ad click information through URLs | `ads_data_redaction` and `url_passthrough` (advanced mode). | [Settings reference](../google/settings-reference.md) |
+| Google Consent Mode | Where consent is not required | Banner and measurement outside the regions that need consent. | [Where consent is not required](../compliance/consent-not-required.md) |
+| IAB TCF | IAB TCF v2.4 | Turns the banner into an IAB TCF banner with TC string. | [IAB TCF](../compliance/iab-tcf.md) |
+| IAB TCF | Additional Consent (AC String) | Google Additional Consent for ad tech providers not in the TCF. | [IAB TCF](../compliance/iab-tcf.md) |
+| IAB TCF | Google ads consent from the TC string | Lets Google read ad consent from the TC string. | [IAB TCF and Google](../google/tcf-and-google.md) |
+| Other settings | Cross-Device Consent | Syncs a signed-in user's choice across devices. | [Cross-device consent](../developers/cross-device-consent.md) |
+| Other settings | Script Blocking | Holds back tracking scripts until consent. | [Script blocking](../cookies-and-scripts/script-blocking.md) |
+| Other settings | Auto Cookie Detection | Uses scan results to categorise cookies and scripts. Always on. | [Cookie scanner](../cookies-and-scripts/cookie-scanner.md) |
 
 Some settings depend on your plan (for example Google Consent Mode and IAB TCF from Standard). Locked settings show an upgrade note. See [Plans and limits](../getting-started/plans-and-limits.md).

@@ -12,7 +12,7 @@ Okito asks for consent first in the regions whose laws expect it: the EEA, the U
 | **No banner, keep measurement on** | Not shown | **Granted**. Beginner plan and higher. |
 | **Show the banner, measurement off until a choice** | Shown | Starts **denied** until the visitor chooses. |
 
-Global Privacy Control always wins: a visitor whose browser sends GPC starts denied.
+Global Privacy Control always wins: a visitor whose browser sends GPC starts denied, and scripts that need consent stay blocked until the visitor accepts them.
 
 ## Why "keep measurement on" is the default
 

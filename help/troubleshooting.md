@@ -28,7 +28,7 @@ Okito is installed twice (theme + plugin + GTM), or another consent tool is acti
 ## A tag doesn't run after Accept All
 
 * Check that its cookies are in the category the visitor accepted (Cookie Manager).
-* If you [marked the script](../cookies-and-scripts/manual-script-marking.md), check `data-cookie-category` is spelled right (`functional`, `analytics`, `performance`, `advertisement`).
+* If you [marked the script](../cookies-and-scripts/manual-script-marking.md), check `data-cookie-category` is spelled right (`necessary`, `functional`, `analytics`, `performance`, `advertisement`, or a [name used by other consent tools](../cookies-and-scripts/manual-script-marking.md) such as `marketing`).
 * If a [service](../cookies-and-scripts/services.md) is switched off, its scripts stay blocked even when the category is on.
 
 ## Something on my site stopped working

@@ -14,6 +14,9 @@ This is the standard installation. Every other method installs the same two piec
 
 ```html
 <head>
+  <!-- Optional, recommended: early blocker, the very first line (see Script blocking) -->
+  <script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY/blocker.js"></script>
+
   <!-- 1. Okito Consent Mode (only in advanced mode; copy yours from Install banner) -->
   <script>
     window.dataLayer = window.dataLayer || [];

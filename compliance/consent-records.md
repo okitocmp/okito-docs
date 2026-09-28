@@ -16,6 +16,8 @@ Each record shows:
 
 In IAB TCF mode, Okito also stores the TC string of each choice.
 
+Okito does not fingerprint the visitor's device to build the visitor ID. The visitor's IP address is stored shortened to its network (for example `203.0.113.0` instead of `203.0.113.77`), which is enough for proof without keeping the full address.
+
 Records are listed newest first. Search by website, visitor ID or action, and choose how many rows to load per page.
 
 ## Using records

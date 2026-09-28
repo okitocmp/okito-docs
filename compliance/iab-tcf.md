@@ -8,6 +8,10 @@ The IAB Europe Transparency & Consent Framework (TCF) is the advertising industr
 
 IAB TCF is included from the Standard plan.
 
+{% hint style="info" %}
+Missing consent mode or TCF signals on your Google tags? Contact [Okito support](../help/support.md) first, not Google. Google support asks for proof that you contacted your CMP before it looks into consent mode questions.
+{% endhint %}
+
 ## Turn it on
 
 1. In Banner Builder → General, turn on **IAB TCF v2.4**.
@@ -28,7 +32,7 @@ TCF applies to the GDPR side of your banner. Visitors in the EEA, the UK and Swi
 ## For developers
 
 * `__tcfapi` commands: `ping`, `getTCData`, `addEventListener`, `removeEventListener`. See [IAB TCF and US privacy APIs](../developers/tcf-and-usp-apis.md).
-* A TCF stub is part of the Consent Mode snippet and the plugins, so `__tcfapi` exists before any vendor script runs.
+* A TCF stub is part of the Consent Mode snippet and the plugins, so `__tcfapi` exists before any vendor script runs. It is included only when your banner can use IAB TCF (TCF is on, or your plan includes TCF). On other sites Google tags follow Google Consent Mode instead. Copy the Consent Mode snippet again after turning TCF on or off; the WordPress plugin follows the change within an hour, and the Shopify app the next time you open it or save Banner Build. In the GTM template, tick or untick **My banner uses IAB TCF** (see [IAB TCF sites](../installation/google-tag-manager.md#iab-tcf-sites)).
 * Mobile apps: the [Okito SDKs](../installation/mobile-apps.md) store the TCF keys (`IABTCF_*`) where ad SDKs read them.
 
 ## Reporting

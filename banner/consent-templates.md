@@ -24,6 +24,8 @@ An **opt-out** notice for US state privacy laws such as the CCPA / CPRA (Califor
 * The banner shows a **Do Not Sell or Share My Personal Information** link. The visitor can opt out of the sale and sharing of their data and limit the use of sensitive data.
 * The browser's [Global Privacy Control](../compliance/us-state-laws.md) signal is treated as an opt-out.
 
+The opt-out notice is shown to US visitors only. A visitor located outside the US (for example in the EU or Türkiye) sees the GDPR opt-in banner instead, because an opt-out notice does not meet those laws. When a visitor's location cannot be determined, the US notice is shown.
+
 ## GDPR & US State Laws
 
 Both templates, chosen per visitor by location: US visitors see the US notice; everyone else sees the GDPR banner. You edit each template's texts separately (switch with the template selector in the Content tab).

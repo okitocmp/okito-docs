@@ -29,6 +29,8 @@ Okito has four plans. **Each website has its own plan**: you can run one site on
 ## What happens at a plan limit
 
 * **Pageviews**: when a website reaches its monthly pageview quota, the Okito script is paused for that website until the next month or an upgrade. The site keeps working, but no banner is shown.
+
+A pageview is a full page load that runs the Okito banner script. Reloading a page or opening another page counts again. Navigating inside a single-page app (without a page load) does not, and a page that includes the Okito code twice counts once.
 * **Scans**: you cannot start a new scan until the next month or an upgrade.
 * **Google Consent Mode and IAB TCF on Free / Beginner**: these settings are locked in the dashboard, and the Okito script does not send consent mode commands or TCF signals for the website. Your choice in the setup wizard is saved and applies as soon as you upgrade.
 
