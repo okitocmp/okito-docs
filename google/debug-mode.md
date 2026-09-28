@@ -10,15 +10,11 @@ Debug mode stays on for the browser tab. Open a page with `?okito_debug=0` to tu
 
 ## Green: everything is in order
 
-![Debug mode: green](../.gitbook/assets/debug-mode-green.png)
-
 * **The Consent Mode default was set before any Google tag.** Nothing to do.
 * **No Google tag ran before Okito; Okito sets the Consent Mode default now.** Also fine.
 * **The IAB TCF API (`__tcfapi`) is available to Google tags.** (TCF sites.)
 
 ## Yellow: a Google tag ran first
-
-![Debug mode: Google Tag Manager ran first](../.gitbook/assets/debug-mode-gtm-late.png)
 
 The box names the tag that ran too early (for example `gtag("js")` or Google Tag Manager) and tells you what to do:
 
