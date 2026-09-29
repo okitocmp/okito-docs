@@ -8,15 +8,15 @@ Each setting starts with Google's explanation, followed by how Okito sets it.
 
 ## Consent types
 
-| Consent type | Google | Okito |
-| --- | --- | --- |
-| `ad_storage` | Enables storage, such as cookies (web) or device identifiers (apps), related to advertising. | Granted when the visitor accepts the Advertisement category, otherwise denied. |
-| `ad_user_data` | Sets consent for sending user data to Google for online advertising purposes. | Granted when the visitor accepts the Advertisement category, otherwise denied. |
-| `ad_personalization` | Sets consent for personalized advertising. | Granted when the visitor accepts the Advertisement category, otherwise denied. |
-| `analytics_storage` | Enables storage, such as cookies (web) or app identifiers (apps), related to analytics, for example, visit duration. | Granted when the visitor accepts the Analytics category, otherwise denied. |
-| `functionality_storage` | Enables storage that supports the functionality of the website or app, for example, language settings. | Granted by default; the update follows the visitor's choice for the Functional category. |
-| `personalization_storage` | Enables storage related to personalization, for example, video recommendations. | Follows the visitor's choice for the Functional category. |
-| `security_storage` | Enables storage related to security such as authentication functionality, fraud prevention, and other user protection. | Always granted. |
+| Consent type              | Google                                                                                                                 | Okito                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ad_storage`              | Enables storage, such as cookies (web) or device identifiers (apps), related to advertising.                           | Granted when the visitor accepts the Advertisement category, otherwise denied.           |
+| `ad_user_data`            | Sets consent for sending user data to Google for online advertising purposes.                                          | Granted when the visitor accepts the Advertisement category, otherwise denied.           |
+| `ad_personalization`      | Sets consent for personalized advertising.                                                                             | Granted when the visitor accepts the Advertisement category, otherwise denied.           |
+| `analytics_storage`       | Enables storage, such as cookies (web) or app identifiers (apps), related to analytics, for example, visit duration.   | Granted when the visitor accepts the Analytics category, otherwise denied.               |
+| `functionality_storage`   | Enables storage that supports the functionality of the website or app, for example, language settings.                 | Granted by default; the update follows the visitor's choice for the Functional category. |
+| `personalization_storage` | Enables storage related to personalization, for example, video recommendations.                                        | Follows the visitor's choice for the Functional category.                                |
+| `security_storage`        | Enables storage related to security such as authentication functionality, fraud prevention, and other user protection. | Always granted.                                                                          |
 
 ## Other settings
 
@@ -24,7 +24,7 @@ Each setting starts with Google's explanation, followed by how Okito sets it.
 
 **Google:** In basic consent mode, Google tags are blocked until the user interacts with a consent banner, and no data is sent to Google before that. In advanced consent mode, Google tags load when the page opens, use the default consent state, send cookieless pings while consent is denied, and send full measurement data after the user consents.
 
-**Okito:** Advanced by default (basic on Free and Beginner). Banner Builder → General → **Google tags** → Basic blocks Google tags until the visitor consents; Okito puts the consent mode default and the visitor's choice in the data layer, so the tags read them when they load. See [Basic and advanced consent mode](basic-and-advanced.md).
+**Okito:** Advanced by default. Banner Builder → General → **Google tags** → Basic sends no consent mode commands and blocks Google tags until the visitor consents. See [Basic and advanced consent mode](basic-and-advanced.md).
 
 ### `region`
 

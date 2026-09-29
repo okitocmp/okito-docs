@@ -10,16 +10,12 @@ Debug mode stays on for the browser tab. Open a page with `?okito_debug=0` to tu
 
 ## Green: everything is in order
 
-![Debug mode: green](../.gitbook/assets/debug-mode-green.png)
-
 * **The Consent Mode default was set before any Google tag.** Nothing to do.
 * **No Google tag ran before Okito; Okito sets the Consent Mode default now.** Also fine.
 * **A Google tag was queued before Okito loaded but had not run yet; Okito put the Consent Mode default in front of it.** Google still reads the default first on this page view. This depends on Okito loading before Google's script, so for every page view to be safe, put the Consent Mode snippet above Google Tag Manager / gtag.js ([Load order](load-order.md)).
 * **The IAB TCF API (`__tcfapi`) is available to Google tags.** (TCF sites.)
 
 ## Yellow: a Google tag ran first
-
-![Debug mode: Google Tag Manager ran first](../.gitbook/assets/debug-mode-gtm-late.png)
 
 The box names the tag that ran too early (for example `gtag("js")` or Google Tag Manager) and tells you what to do:
 
@@ -30,7 +26,7 @@ On IAB TCF sites, it also warns when Google tags ran before the TCF API was avai
 
 ## Basic mode and consent mode off
 
-In [basic consent mode](basic-and-advanced.md) (also used on Free and Beginner plans), the box says Okito blocks Google tags until the visitor consents, and that they then read the consent mode default and the visitor's choice. When you turn consent mode off in Banner Builder, it says so.
+In [basic consent mode](basic-and-advanced.md), the box says Okito sends no consent mode commands and blocks Google tags until consent. When consent mode is off (by setting or plan), it says so.
 
 ## Check all pages at once
 

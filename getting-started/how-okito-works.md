@@ -6,13 +6,13 @@ description: The pieces of Okito and what happens when a visitor opens your site
 
 ## The pieces
 
-| Piece | What it is |
-| --- | --- |
-| **Dashboard** | [app.okito.com](https://app.okito.com). Where you add websites, design the banner, scan cookies and read reports. |
-| **Website key** | A public identifier for one website, for example `eu_okito-d288cf-c0d2b7-d`. It appears in your script URL. |
-| **Okito script** | `https://cdn.okito.com/js/YOUR_WEBSITE_KEY`. Loads your banner configuration and applies consent on the page. |
-| **Consent Mode snippet** | A small inline script for `<head>` that sets Google consent mode defaults before any Google tag runs. |
-| **Integrations** | WordPress plugin, Shopify app, Webflow app, Framer plugin, GTM template and mobile SDKs. They install the script and snippet for you. |
+| Piece                    | What it is                                                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Dashboard**            | [app.okito.com](https://app.okito.com). Where you add websites, design the banner, scan cookies and read reports.                     |
+| **Website key**          | A public identifier for one website, for example `eu_okito-d288cf-c0d2b7-d`. It appears in your script URL.                           |
+| **Okito script**         | `https://cdn.okito.com/js/YOUR_WEBSITE_KEY`. Loads your banner configuration and applies consent on the page.                         |
+| **Consent Mode snippet** | A small inline script for `<head>` that sets Google consent mode defaults before any Google tag runs.                                 |
+| **Integrations**         | WordPress plugin, Shopify app, Webflow app, Framer plugin, GTM template and mobile SDKs. They install the script and snippet for you. |
 
 ## What happens on a page view
 
@@ -30,7 +30,7 @@ description: The pieces of Okito and what happens when a visitor opens your site
 
 ## Where the choice is stored
 
-The choice is stored in the visitor's browser for the website's domain, so it applies to every page of that site. Okito asks again after 13 months, when the visitor reopens the banner, when you ask every visitor again after a meaningful change, and on IAB TCF sites when your vendors, publisher restrictions or the TCF policy version change (see [Consent renewal](../compliance/consent-renewal.md)).
+The choice is stored in the visitor's browser for the website's domain, so it applies to every page of that site. Okito asks again after 13 months (see [Consent renewal](../compliance/consent-renewal.md)), or when the visitor reopens the banner.
 
 ## Categories
 

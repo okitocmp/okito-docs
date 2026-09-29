@@ -18,19 +18,17 @@ Turn on **Google ads consent from the TC string** (Banner Builder → General, u
 
 On IAB TCF sites, Okito sends the consent mode update from the TCF purposes the visitor accepted, based on the rule Google uses when it reads a TC string. Storage needs purpose 1 (store and/or access information on a device), and the advertising types need consent for Google as a vendor (755).
 
-| Consent mode type | Granted when the visitor accepted |
-| --- | --- |
-| `ad_storage` | Google, purpose 1 and an advertising purpose (2, 3 or 4) |
-| `ad_user_data` | Google, purposes 1 and 7 |
-| `ad_personalization` | Google, purposes 3 and 4 |
-| `analytics_storage` | Purpose 1, and purpose 8 or 9 |
-| `functionality_storage` | Purpose 1 |
-| `personalization_storage` | Purpose 1, and purpose 5 or 6 |
-| `security_storage` | Always granted |
+| Consent mode type         | Granted when the visitor accepted                        |
+| ------------------------- | -------------------------------------------------------- |
+| `ad_storage`              | Google, purpose 1 and an advertising purpose (2, 3 or 4) |
+| `ad_user_data`            | Google, purposes 1 and 7                                 |
+| `ad_personalization`      | Google, purposes 3 and 4                                 |
+| `analytics_storage`       | Purpose 1, and purpose 8 or 9                            |
+| `functionality_storage`   | Purpose 1                                                |
+| `personalization_storage` | Purpose 1, and purpose 5 or 6                            |
+| `security_storage`        | Always granted                                           |
 
-A purpose you do not allow Google with a [publisher restriction](../compliance/iab-tcf.md#publisher-restrictions) counts as not accepted for `ad_storage`, `ad_user_data` and `ad_personalization`. The other types don't change.
-
-`ad_storage` asks for an advertising purpose on top of Google's rule, so a visitor who refused every advertising purpose never grants it (tags of other ad vendors in Google Tag Manager often check `ad_storage`). A category switched on in the TCF preferences (Advertisement, Analytics, Functional) grants its types too; for the advertising types only together with consent for Google, and not on a purpose you do not allow Google. Because Okito always lists Google, **Accept all** grants everything, unless a publisher restriction does not allow Google a purpose that an advertising type needs (for example purpose 1, 3, 4 or 7). The consent records use the same purpose rule without the vendor condition.
+`ad_storage` asks for an advertising purpose on top of Google's rule, so a visitor who refused every advertising purpose never grants it (tags of other ad vendors in Google Tag Manager often check `ad_storage`). A category switched on in the TCF preferences (Advertisement, Analytics, Functional) grants its types too; for the advertising types only together with consent for Google. Because Okito always lists Google, **Accept all** grants everything. The consent records use the same purpose rule without the vendor condition.
 
 ## Additional Consent
 
@@ -38,7 +36,7 @@ Turn on **Additional Consent (AC String)** to ask for consent for Google's ad te
 
 ## Load order and the TCF stub
 
-Google tags look for the TCF API (`__tcfapi`) when they start. When your banner can use IAB TCF (TCF is on, or your plan includes TCF), the Okito Consent Mode snippet (or, with Google tags set to basic or off, the stub **Install banner** shows on its own), the WordPress plugin and the Shopify app add a small **TCF stub** at the top of the page, so `__tcfapi` exists before any Google tag runs, even if the Okito script loads later. The GTM template adds it when **My banner uses IAB TCF** is ticked (see [IAB TCF sites](../installation/google-tag-manager.md#iab-tcf-sites)). On sites without TCF, Google tags follow Google Consent Mode. [Debug mode](debug-mode.md) warns if Google tags ran before the TCF API was available.
+Google tags look for the TCF API (`__tcfapi`) when they start. When your banner can use IAB TCF (TCF is on, or your plan includes TCF), the Okito Consent Mode snippet, the WordPress plugin and the Shopify app add a small **TCF stub** at the top of the page, so `__tcfapi` exists before any Google tag runs, even if the Okito script loads later. The GTM template adds it when **My banner uses IAB TCF** is ticked (see [IAB TCF sites](../installation/google-tag-manager.md#iab-tcf-sites)). On sites without TCF, Google tags follow Google Consent Mode. [Debug mode](debug-mode.md) warns if Google tags ran before the TCF API was available.
 
 ## Where TCF applies
 

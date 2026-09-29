@@ -49,7 +49,7 @@ Always copy the snippet from **Install banner**. The example above is shortened.
 * The **snippet** is small and inline, so it runs before anything else. Google tags that load before the Okito script still start with the right consent state.
 * The **Okito script** loads your banner, reads the visitor's choice and sends the consent mode update.
 
-If you don't use Google tags, or you use [basic consent mode](../google/basic-and-advanced.md), you only need the Okito script. On IAB TCF sites, also keep the IAB TCF stub that **Install banner** shows at the top of `<head>`.
+If you don't use Google tags, or you use [basic consent mode](../google/basic-and-advanced.md), you only need the Okito script.
 
 ## `async` or not?
 

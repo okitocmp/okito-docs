@@ -31,11 +31,11 @@ Turn on **Okito → Settings → Early blocker** to hold back tracking tags that
 
 ## Filters for developers
 
-| Filter | Default | Use |
-| --- | --- | --- |
-| `okito_print_consent_mode_defaults` | `true` | Return `false` to leave out the consent mode defaults; the plugin then prints only the TCF stub (if your banner can use IAB TCF). Optional in [basic consent mode](../google/basic-and-advanced.md), where the Okito script sets the defaults; they do no harm there either. |
-| `okito_consent_mode_ads_data_redaction` | `true` | Value of `ads_data_redaction` in the defaults (from version 1.1.4). |
-| `okito_consent_mode_url_passthrough` | `false` | Set `url_passthrough` in the defaults (from version 1.1.4). |
+| Filter                                  | Default | Use                                                                                                                                                                                 |
+| --------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `okito_print_consent_mode_defaults`     | `true`  | Return `false` for [basic consent mode](../google/basic-and-advanced.md): the plugin then prints only the TCF stub (if your banner can use IAB TCF), not the consent mode defaults. |
+| `okito_consent_mode_ads_data_redaction` | `true`  | Value of `ads_data_redaction` in the defaults (from version 1.1.4).                                                                                                                 |
+| `okito_consent_mode_url_passthrough`    | `false` | Set `url_passthrough` in the defaults (from version 1.1.4).                                                                                                                         |
 
 ```php
 // In your theme's functions.php or a small plugin:

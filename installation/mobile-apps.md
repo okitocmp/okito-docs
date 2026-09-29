@@ -31,9 +31,10 @@ OkitoCMP.shared.initialize(.init(
     baseURL: URL(string: "COPY_FROM_INSTALL_BANNER")!,
     websiteId: "COPY_FROM_INSTALL_BANNER",
     visitorId: UUID().uuidString,
+    publisherCountryCode: "TR",
     consentLanguage: "EN",
     cmpSdkId: 508,
-    cmpSdkVersion: 2
+    cmpSdkVersion: 1
 ))
 ```
 
@@ -56,27 +57,26 @@ OkitoCMP.initialize(
         baseUrl = "COPY_FROM_INSTALL_BANNER",
         websiteId = "COPY_FROM_INSTALL_BANNER",
         visitorId = java.util.UUID.randomUUID().toString(),
+        publisherCountryCode = "TR",
         consentLanguage = "EN",
         cmpSdkId = 508,
-        cmpSdkVersion = 2,
+        cmpSdkVersion = 1,
     ),
 )
 ```
-
-The publisher country in the TC string (`PublisherCC`) comes from your site's settings in the Okito dashboard; the apps don't set it.
 
 ## API
 
 Both SDKs mirror the web `__tcfapi`:
 
-| Call | What it does |
-| --- | --- |
-| `acceptAll()` / `rejectAll()` | Save a choice without the UI. |
-| `save(purposes, vendors, specialFeatures, …)` | Save a granular choice. |
-| `getTCData()` | The current TC data, or none if the user hasn't chosen yet. |
-| `addEventListener { … }` / `removeEventListener(id)` | Be notified when consent changes. |
-| `reset()` | Clear the stored consent. |
-| `cmpStatus`, `eventStatus` | Loading state and the last event, as in `__tcfapi`. |
+| Call                                                 | What it does                                                |
+| ---------------------------------------------------- | ----------------------------------------------------------- |
+| `acceptAll()` / `rejectAll()`                        | Save a choice without the UI.                               |
+| `save(purposes, vendors, specialFeatures, …)`        | Save a granular choice.                                     |
+| `getTCData()`                                        | The current TC data, or none if the user hasn't chosen yet. |
+| `addEventListener { … }` / `removeEventListener(id)` | Be notified when consent changes.                           |
+| `reset()`                                            | Clear the stored consent.                                   |
+| `cmpStatus`, `eventStatus`                           | Loading state and the last event, as in `__tcfapi`.         |
 
 ## Where consent is stored
 
@@ -85,8 +85,6 @@ The SDKs write the standard `IABTCF_*` keys to `UserDefaults.standard` (iOS) and
 ## Google Consent Mode for Firebase
 
 If your app uses Google Analytics for Firebase, the SDK sets Firebase consent (`Analytics.setConsent`) at start-up and after every choice. Pass `firebaseConsentMode: false` in the options to turn it off.
-
-With IAB TCF, the consent types follow the same purposes as on the web (see [IAB TCF and Google](../google/tcf-and-google.md#tcf-purposes-and-consent-mode)), and in the app all of them also need consent for Google (vendor 755). A purpose you do not allow Google with a [publisher restriction](../compliance/iab-tcf.md#publisher-restrictions) keeps the ad types that rest on it denied, as on the web.
 
 ## Test it
 
