@@ -15,7 +15,7 @@ Click **Save Banner** to apply your changes. There is no separate publish step: 
 | **General** | Banner name, [consent template](consent-templates.md), languages and compliance settings: Google Consent Mode, IAB TCF, Additional Consent, cross-device consent, script blocking and [where consent is not required](../compliance/consent-not-required.md). |
 | **Layout** | Banner, box or pop-up, and its [position](layout-and-position.md). |
 | **Mobile SDK** | The consent screen for [iOS and Android apps](../installation/mobile-apps.md). |
-| **Content** | Title, message and button texts for each language, and the [Google Consent Mode template](google-consent-mode-template.md). |
+| **Content** | Title, message and button texts for each language, [links to your privacy policy and Aydınlatma Metni](content-and-languages.md#privacy-policy-and-kvkk-disclosure-notice-links), and the [Google Consent Mode template](google-consent-mode-template.md). |
 | **Theme** | One of the [design themes](themes-and-colors.md). |
 | **Colors** | Light, dark or custom colours for the banner, pop-up and buttons. |
 

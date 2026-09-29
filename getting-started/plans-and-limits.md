@@ -19,7 +19,8 @@ Okito has four plans. **Each website has its own plan**: you can run one site on
 | Automatic script blocking | | ✓ | ✓ | ✓ |
 | Geo-targeting (GDPR + US, banner only where required) | | ✓ | ✓ | ✓ |
 | Policy generator | | ✓ | ✓ | ✓ |
-| **Google Consent Mode v2** | | | ✓ | ✓ |
+| **Google Consent Mode v2**, basic | ✓ | ✓ | ✓ | ✓ |
+| **Google Consent Mode v2**, advanced | | | ✓ | ✓ |
 | **IAB TCF** | | | ✓ | ✓ |
 | Advanced analytics | | | ✓ | ✓ |
 | Scheduled scans | | | | ✓ |
@@ -32,11 +33,7 @@ Okito has four plans. **Each website has its own plan**: you can run one site on
 
 A pageview is a full page load that runs the Okito banner script. Reloading a page or opening another page counts again. Navigating inside a single-page app (without a page load) does not, and a page that includes the Okito code twice counts once.
 * **Scans**: you cannot start a new scan until the next month or an upgrade.
-* **Google Consent Mode and IAB TCF on Free / Beginner**: these settings are locked in the dashboard, and the Okito script does not send consent mode commands or TCF signals for the website. Your choice in the setup wizard is saved and applies as soon as you upgrade.
-
-{% hint style="info" %}
-If your page already sets a consent mode default itself (for example with the WordPress plugin), Okito still sends the visitor's choice as a consent mode update on Free and Beginner, so Google tags are never left on that default.
-{% endhint %}
+* **Google Consent Mode and IAB TCF on Free / Beginner**: Google tags use [basic consent mode](../google/basic-and-advanced.md#basic-configuration-google-tags-are-blocked-until-consent): they wait for the visitor's consent and then get the visitor's choice. Advanced consent mode and IAB TCF are locked in the dashboard; your choice in the setup wizard is saved and applies as soon as you upgrade. You can still turn consent mode off in Banner Builder.
 
 ## Shopify
 

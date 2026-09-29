@@ -16,11 +16,14 @@ The GDPR, UK GDPR, the Swiss FADP, the ePrivacy rules and Türkiye's KVKK expect
 | Informed consent | Your banner text, a link to your privacy policy, and the cookie list from your scans. |
 | Withdrawal at any time | The [reopen button](../banner/reopen-button.md) and your own "Cookie settings" link. |
 | Proof of consent | [Consent records](consent-records.md) with timestamp, choice and banner version. |
-| Renewal | Okito asks again after 13 months. See [Consent renewal](consent-renewal.md). |
+| Renewal | Okito asks again after 13 months, and sooner when you ask every visitor again after a meaningful change (new text, policy or category). See [Consent renewal](consent-renewal.md). |
 
 ## KVKK (Türkiye)
 
-For websites based in Türkiye, Turkish-language banners use KVKK wording by default ("açık rıza", "Aydınlatma Metni"). Link your Aydınlatma Metni (disclosure notice) and privacy policy in the banner text.
+For a website whose country is Türkiye, visitors in Türkiye get the KVKK wording by default ("açık rıza", "Aydınlatma Metni"), in Turkish or English.
+
+* Add your Aydınlatma Metni (disclosure notice) and privacy policy in Banner Builder → **Content → Links**. Visitors in Türkiye see the Aydınlatma Metni link under the banner text, so it can be reached from the first layer, as the Kurul's cookie guide (2022) recommends. See [Content and languages](../banner/content-and-languages.md#privacy-policy-and-kvkk-disclosure-notice-links).
+* A visitor whose browser is set to Turkish gets the banner in Turkish, even if your page says it is in another language, unless the URL path has a language (such as `/en/`) or the visitor picked one in the banner. If Turkish is not one of your languages, Okito's default Turkish texts are used.
 
 ## Your part
 

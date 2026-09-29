@@ -6,12 +6,12 @@ description: The standard IAB APIs that ad tech and your own code can use.
 
 ## `__tcfapi` (IAB TCF)
 
-Available when [IAB TCF](../compliance/iab-tcf.md) is on. Okito implements the IAB TCF CMP API (version 2.4). The TCF stub in the Consent Mode snippet, the plugins and the GTM template (when **My banner uses IAB TCF** is ticked) makes `__tcfapi` available before the Okito script loads; calls made then are queued. Sites whose banner cannot use IAB TCF get no stub, and `__tcfapi` is not defined for visitors in GDPR regions there. If a stub is on the page but TCF is off (for example a plan that includes TCF with TCF turned off, or the GTM template's option left ticked), queued calls are answered with `cmpStatus: "error"` and the stub is removed for visitors in GDPR regions; other visitors get `gdprApplies: false`. Google tags then follow Google Consent Mode.
+Available when [IAB TCF](../compliance/iab-tcf.md) is on. Okito implements the IAB TCF CMP API (version 2.4). The TCF stub in the Consent Mode snippet (or on its own on **Install banner** when Google tags are set to basic or off), the plugins and the GTM template (when **My banner uses IAB TCF** is ticked) makes `__tcfapi` available before the Okito script loads; calls made then are queued. Sites whose banner cannot use IAB TCF get no stub, and `__tcfapi` is not defined for visitors in GDPR regions there. If a stub is on the page but TCF is off (for example a plan that includes TCF with TCF turned off, or the GTM template's option left ticked), queued calls are answered with `cmpStatus: "error"` and the stub is removed for visitors in GDPR regions; other visitors get `gdprApplies: false`. Google tags then follow Google Consent Mode.
 
 | Command | Returns |
 | --- | --- |
 | `ping` | CMP status: loaded, `gdprApplies`, CMP ID (508) and version. |
-| `getTCData` | The current TC data: TC string, purpose and vendor consents, legitimate interests, `enableAdvertiserConsentMode`. |
+| `getTCData` | The current TC data: TC string, purpose and vendor consents, legitimate interests, your [publisher restrictions](../compliance/iab-tcf.md#publisher-restrictions) (`publisher.restrictions`), `enableAdvertiserConsentMode`. |
 | `addEventListener` | Calls back on each step: `cmpuishown` when the banner or preferences appear, `useractioncomplete` after the visitor's choice, `tcloaded` when a stored choice is loaded. A new visitor gets `cmpuishown` first, not an empty `tcloaded`. |
 | `removeEventListener` | Stops a listener. |
 | `getInAppTCData` | TC data in the in-app format. |

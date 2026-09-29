@@ -30,7 +30,7 @@ description: The pieces of Okito and what happens when a visitor opens your site
 
 ## Where the choice is stored
 
-The choice is stored in the visitor's browser for the website's domain, so it applies to every page of that site. Okito asks again after 13 months (see [Consent renewal](../compliance/consent-renewal.md)), or when the visitor reopens the banner.
+The choice is stored in the visitor's browser for the website's domain, so it applies to every page of that site. Okito asks again after 13 months, when the visitor reopens the banner, when you ask every visitor again after a meaningful change, and on IAB TCF sites when your vendors, publisher restrictions or the TCF policy version change (see [Consent renewal](../compliance/consent-renewal.md)).
 
 ## Categories
 

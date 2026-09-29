@@ -6,7 +6,9 @@ description: Hold back tracking scripts until the visitor consents.
 
 Script blocking stops analytics and advertising scripts from running until the visitor allows their category (and service). When the visitor consents, Okito releases the scripts; when they refuse, the scripts never run.
 
-Script blocking is on by default (Banner Builder → General → **Script Blocking**). On every plan, Okito blocks known trackers and the scripts found by your scans. Your own blocking rules are included from the Beginner plan.
+Automatic blocking is on by default (Banner Builder → General → **Automatic blocking** → *Automatic*; in the Shopify app, **Automatic blocking** on). On every plan, Okito blocks known trackers and the scripts found by your scans. Your own blocking rules are included from the Beginner plan.
+
+If you choose **Manual** (Shopify: turn **Automatic blocking** off), Okito asks you to confirm and then holds nothing by itself: known trackers, the scripts from your scans, tracking requests, tracking cookies and the embeds listed below load as your page loads them. What you set up yourself still holds: scripts and iframes you mark (see [Mark scripts manually](manual-script-marking.md)) and your [blocking rules](#blocking-rules), for scripts and requests. Google tags in basic consent mode or with consent mode off also still wait for consent. Cookies of a category the visitor refuses are still deleted. Choose Manual only if you hold every tag back yourself, for example with manual marking or consent settings in Google Tag Manager; the installation check (**Install banner → Verify**) reminds you that blocking is manual. If a single script breaks your site, add an allow rule for it under [Blocking rules](#blocking-rules) instead.
 
 ## What gets blocked
 

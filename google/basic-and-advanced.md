@@ -20,15 +20,15 @@ Okito supports both; **advanced is the default**. Choose in Banner Builder → G
 
 ## Basic configuration (Google tags are blocked until consent)
 
-1. In Banner Builder → General → **Google tags**, choose **Basic: block Google tags until consent**. Script blocking is turned on automatically, and Okito sends no consent mode default or update commands.
-2. Remove the Okito Consent Mode snippet from `<head>` and keep the Okito script. On WordPress, add `add_filter( 'okito_print_consent_mode_defaults', '__return_false' );` to your theme or a small plugin.
+1. In Banner Builder → General → **Google tags**, choose **Basic: block Google tags until consent**. Script blocking is turned on automatically. Okito puts the consent mode default and the visitor's choice in the data layer, so Google tags know the consent state when they load after consent, as Google's basic configuration expects. Nothing reaches Google before consent.
+2. Keep the Okito script. The Consent Mode snippet is not needed in this configuration; it does no harm if it stays. On IAB TCF sites, keep the IAB TCF stub at the top of `<head>`: with Google tags set to basic, **Install banner** shows it on its own, and the WordPress plugin and Shopify app keep printing it.
 3. Google tags that are added after the Okito script loads (for example by Google Tag Manager) are blocked automatically. Tags written directly in your page can run before Okito loads, so mark them: change `<script>` to `<script type="text/plain" data-cookie-category="analytics">` (use `advertisement` for Google Ads). Okito runs them once the visitor consents to that category. See [Mark scripts manually](../cookies-and-scripts/manual-script-marking.md).
 4. Check it: open your site in a private window and look at the Network tab. Before consent there are no requests to googletagmanager.com or google-analytics.com; after **Accept All** the Google tags load.
 
 ## Switch back
 
-To go back to the advanced configuration, choose **Advanced** again and paste the Consent Mode snippet back into `<head>` (on WordPress, remove the filter).
+To go back to the advanced configuration, choose **Advanced** again and make sure the Consent Mode snippet is at the top of `<head>` (on WordPress, remove the `okito_print_consent_mode_defaults` filter if you added one).
 
 ## Off
 
-**Off: no Google consent mode** sends no consent mode commands. Google tags are then treated like any other tracker: blocked until the visitor consents to their category. On Free and Beginner plans, consent mode is always off.
+**Off: no Google consent mode** sends no consent mode commands. Google tags are then treated like any other tracker: blocked until the visitor consents to their category. On Free and Beginner plans, Google tags use basic consent mode unless you turn consent mode off; advanced is included from the Standard plan.
