@@ -5,7 +5,7 @@ site:
     - type: space
       key: okito-docs
       title: Okito Documentation
-      path: /
+      path: undefined
       default: true
       content:
         directory: ./
