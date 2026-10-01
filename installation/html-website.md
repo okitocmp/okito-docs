@@ -41,7 +41,7 @@ This is the standard installation. Every other method installs the same two piec
 ```
 
 {% hint style="warning" %}
-Always copy the snippet from **Install banner**. The example above is shortened. Your copy contains the full region list, the IAB TCF stub (when TCF can apply) and your settings for [where consent is not required](../compliance/consent-not-required.md), [ads data redaction and URL passthrough](../google/settings-reference.md).
+Always copy the snippet from **Install banner**. The example above is shortened. Your copy contains the full region list, the IAB TCF stub (when TCF can apply), the IAB GPP stub (with the US State Laws notice, without IAB TCF) and your settings for [where consent is not required](../compliance/consent-not-required.md), [ads data redaction and URL passthrough](../google/settings-reference.md).
 {% endhint %}
 
 ## Why two pieces?
@@ -49,7 +49,7 @@ Always copy the snippet from **Install banner**. The example above is shortened.
 * The **snippet** is small and inline, so it runs before anything else. Google tags that load before the Okito script still start with the right consent state.
 * The **Okito script** loads your banner, reads the visitor's choice and sends the consent mode update.
 
-If you don't use Google tags, or you use [basic consent mode](../google/basic-and-advanced.md), you only need the Okito script.
+If you don't use Google tags, or you use [basic consent mode](../google/basic-and-advanced.md), you only need the Okito script. On IAB TCF sites, also keep the IAB TCF stub that **Install banner** shows at the top of `<head>`; on US State Laws sites without IAB TCF, the IAB GPP stub it shows instead.
 
 ## `async` or not?
 

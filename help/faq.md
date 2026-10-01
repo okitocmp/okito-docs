@@ -10,7 +10,7 @@ Okito is an IAB Europe registered CMP for the Transparency & Consent Framework (
 
 ### Does Okito support Google Consent Mode v2?
 
-Yes, in both basic and advanced configurations, from the Standard plan. See [Google Consent Mode v2](../google/google-consent-mode.md).
+Yes. Basic consent mode is available on every plan; advanced consent mode is included from the Standard plan. See [Google Consent Mode v2](../google/google-consent-mode.md).
 
 ### Do I need Google Tag Manager?
 
@@ -42,7 +42,7 @@ Yes, with the floating reopen button or your own "Cookie settings" link. See [Re
 
 ### How long is a choice remembered?
 
-Up to 13 months, then Okito asks again. See [Consent renewal](../compliance/consent-renewal.md).
+Up to 13 months, or less: Okito also asks again when you ask every visitor again after a meaningful change, and on IAB TCF sites when your vendors or restrictions change. See [Consent renewal](../compliance/consent-renewal.md).
 
 ### Does Okito respect Global Privacy Control?
 

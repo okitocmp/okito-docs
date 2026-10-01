@@ -18,7 +18,8 @@ If your banner uses IAB TCF, tick **My banner uses IAB TCF** in the tag; see [IA
    * **Website Key**: copy it from the Okito dashboard (Install banner).
    * **Where consent is not required (e.g. Japan)**: use the same option as in Banner Builder (see [Where consent is not required](../compliance/consent-not-required.md)).
    * **My banner uses IAB TCF**: tick this if IAB TCF is on in Okito.
-   * **US visitors follow the opt-out model**: tick this if your banner uses the **US State Laws** or **GDPR & US State Laws** template.
+   * **US visitors follow the opt-out model**: tick this if your banner uses the **US State Laws** or **GDPR & US State Laws** template, unless your site is [directed to minors](../compliance/us-state-laws.md#sensitive-data-and-sites-for-minors) (US visitors then start denied).
+   * **My banner shows the US State Laws notice (IAB GPP)**: tick this with the **US State Laws** template, or **GDPR & US State Laws** without IAB TCF.
 4. Trigger: **Consent Initialization - All Pages**. This trigger runs before every other tag.
 5. Save, then **Submit** and publish the container.
 
@@ -33,7 +34,8 @@ If you use the template, don't also paste the Okito script or the Consent Mode s
 | **Website Key** | Which Okito website to load. | — |
 | **Where consent is not required** | *Keep measurement on*: visitors outside the regions that need consent start **granted**. *Measurement off until a choice*: everyone starts **denied**. | Keep measurement on |
 | **My banner uses IAB TCF** | Adds the IAB TCF API stub, so Google tags find `__tcfapi` even before the Okito script has loaded. Tick it when IAB TCF is on in Okito. | Off |
-| **US visitors follow the opt-out model** | US visitors start granted (with Global Privacy Control respected by the Okito script). Leave unticked for the GDPR template. | Off |
+| **US visitors follow the opt-out model** | US visitors start granted (with Global Privacy Control respected by the Okito script). Leave unticked for the GDPR template and for a site directed to minors. | Off |
+| **My banner shows the US State Laws notice (IAB GPP)** | Adds the IAB Global Privacy Platform API (`__gpp`), so ad tags find it even before the Okito script has loaded (see [IAB TCF and US privacy APIs](../developers/tcf-and-usp-apis.md)). Leave it off when your banner uses IAB TCF. | Off |
 | **Region-specific defaults** | Your own default for specific regions (ISO 3166-1 countries or ISO 3166-2 subdivisions such as `US-CA`). A region listed here replaces the built-in default for that region. | — |
 | **Wait for update** | Milliseconds GTM waits for Okito's consent update before firing tags that need consent. | 500 |
 | **Redact ads data while consent is denied** | Consent mode `ads_data_redaction`. | On |
@@ -53,7 +55,7 @@ Okito maps its categories to consent types: Advertisement → `ad_storage`, `ad_
 
 ## IAB TCF sites
 
-GTM does not wait for the Okito script, so Google tags in the container can start before it has loaded. If your banner uses IAB TCF, tick **My banner uses IAB TCF** in the tag (update the template first if you don't see the setting): the tag then adds the TCF API stub, so Google tags find `__tcfapi` and get the TC string once the Okito script has loaded. Without it, they follow Google Consent Mode only and [debug mode](../google/debug-mode.md) warns that Google tags ran before the TCF API was available. If you turn TCF off later, untick it.
+GTM does not wait for the Okito script, so Google tags in the container can start before it has loaded. If your banner uses IAB TCF, tick **My banner uses IAB TCF** in the tag (update the template first if you don't see the setting): the tag then adds the TCF API stub, so Google tags find `__tcfapi` and get the TC string once the Okito script has loaded. Without it, they follow Google Consent Mode only and [debug mode](../google/debug-mode.md) warns that Google tags ran before the TCF API was available. If you turn TCF off later, untick it. Likewise, tick or untick **My banner shows the US State Laws notice (IAB GPP)** when you switch to or from the US State Laws template or turn IAB TCF on or off.
 
 The template's stub has no `__tcfapi` locator frame, so vendors inside iframes get the TCF API only once the Okito script has loaded. If you need that from the first moment, use the Consent Mode snippet and the Okito script from **Install banner** above the GTM container instead of the template.
 

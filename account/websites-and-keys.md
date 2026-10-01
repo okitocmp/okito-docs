@@ -24,7 +24,7 @@ Different from website keys, [API keys](../developers/rest-api.md) are secrets.
 
 ## One website per domain
 
-Use a separate Okito website for each brand or domain. Don't reuse one key on unrelated domains: scans, pageview quotas, consent records and TCF vendors would mix. Subdomains of the same site (`www.`, `shop.`) can share a key.
+Use a separate Okito website for each brand or domain. Don't reuse one key on unrelated domains: scans, pageview quotas, consent records and TCF vendors would mix. Subdomains of the same site (`www.`, `shop.`) can share a key, which also lets them [share one consent choice](../banner/subdomain-consent.md).
 
 ## Staging sites
 

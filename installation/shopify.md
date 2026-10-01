@@ -12,11 +12,20 @@ description: Install the Okito Cookie Consent app from the Shopify App Store.
 4. In the Shopify admin, open **Online Store → Themes → Customize → App embeds** and turn on **Okito Cookie Consent**. Save.
 5. Open your storefront in a private window to check the banner.
 
+### You already have an Okito account
+
+If an Okito account already uses your store's email, the app does not add the store to it on its own. **Settings** shows **Connect to your Okito account**: choose **Email me a code**, then enter the 6-digit code from that email (it expires in 15 minutes). Nothing changes in the account until the code is entered.
+
+### A Website Key from the Okito dashboard
+
+You can also type a Website Key made in the Okito dashboard into **Settings**. The app accepts it when the website's domain is your store: its `myshopify.com` address, or its primary domain in Shopify (**Settings → Domains**). A store name that only looks like the website (`bestshoes.myshopify.com` for `bestshoes.com`) is not enough. That website stays on its Okito plan and billing.
+
 ## What the app does
 
-* The theme app embed adds the Consent Mode defaults and the Okito script to your storefront, and the IAB TCF stub when your banner can use IAB TCF.
+* The theme app embed adds the Consent Mode defaults and the Okito script to your storefront, the IAB TCF stub when your banner can use IAB TCF, and the IAB GPP stub when it shows the US State Laws notice without IAB TCF.
 * **Settings**: your Website Key and an on/off switch.
 * **Banner Build**: change the banner from inside Shopify, or open the full Banner Builder in the Okito dashboard.
+* **Shopify's Customer Privacy API**: every choice is passed to Shopify, so Shopify's own analytics and the pixels in **Settings → Customer events** follow it too. Analytics → `analytics`, advertising → `marketing` and `sale_of_data` (a US opt-out turns both off), functional → `preferences`.
 
 {% hint style="warning" %}
 Use one consent banner. If Shopify's own cookie banner (Customer Privacy) is on for the same regions, visitors see two banners. Turn Shopify's banner off where Okito covers your visitors.

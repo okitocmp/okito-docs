@@ -18,10 +18,10 @@ For Turkish-language banners on websites based in Türkiye, the default texts fo
 
 ## US State Laws
 
-An **opt-out** notice for US state privacy laws such as the CCPA / CPRA (California) and the laws of Virginia, Colorado, Connecticut and Utah:
+An **opt-out** notice for US state privacy laws: the CCPA / CPRA (California) and the other 19 comprehensive state laws in force (see [US state privacy laws](../compliance/us-state-laws.md)):
 
-* Cookies and scripts run by default.
-* The banner shows a **Do Not Sell or Share My Personal Information** link. The visitor can opt out of the sale and sharing of their data and limit the use of sensitive data.
+* Cookies and scripts run by default (on a site directed to minors, US visitors start opted out: only necessary cookies and scripts run; see [Sensitive data and sites for minors](../compliance/us-state-laws.md#sensitive-data-and-sites-for-minors)). An opt-out turns off every category except necessary.
+* The banner shows a **Do Not Sell or Share My Personal Information** link. The visitor can opt out of the sale, sharing and targeted advertising of their data, and allow or refuse the use of sensitive data if your site processes some (see [Sensitive data and sites for minors](../compliance/us-state-laws.md#sensitive-data-and-sites-for-minors)).
 * The browser's [Global Privacy Control](../compliance/us-state-laws.md) signal is treated as an opt-out.
 
 The opt-out notice is shown to US visitors only. A visitor located outside the US (for example in the EU or Türkiye) sees the GDPR opt-in banner instead, because an opt-out notice does not meet those laws. When a visitor's location cannot be determined, the US notice is shown.

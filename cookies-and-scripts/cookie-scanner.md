@@ -22,7 +22,9 @@ A first scan runs automatically when you add a website.
 * **Services**: cookies from known providers are grouped into [services](services.md) (for example Google Analytics, Meta Pixel) so visitors can switch them on and off.
 * **Removed cookies**: cookies from earlier scans that were not found again are archived and no longer shown in the banner.
 * **Consent mode check**: each scan also checks every page for Google consent mode gaps. See [Consent mode check](../google/consent-mode-check.md).
+* **Tracking tag check**: each scan also lists tracking tags in your pages that browsers load before consent, with the marked tag to use instead. See [Tracking tags that load before consent](script-blocking.md#tracking-tags-that-load-before-consent).
 * **Banner update**: the banner's cookie list and the script blocking rules update right after the scan.
+* **Cookie table**: the [cookie table on your cookie policy page](cookie-table.md) shows the new list.
 
 ## Scheduled scans
 
@@ -36,4 +38,4 @@ If a cookie only appears behind a login or on a page the scanner can't reach, ad
 
 * The scanner needs your public site. It can't sign in or pass password protection.
 * Scan again after you add new tags, pixels or subdomains.
-* Subdomains that set different cookies (`shop.`, `blog.`) should be separate websites in Okito, or you add their cookies by hand.
+* Subdomains that set different cookies (`shop.`, `blog.`) should be separate websites in Okito, or you add their cookies by hand. To [share consent across subdomains](../banner/subdomain-consent.md), keep them on one website and add their cookies by hand.

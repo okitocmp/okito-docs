@@ -16,7 +16,7 @@
 
 ## Installation
 
-* [Choose an installation method](installation/installation.md)
+* [Choose an installation method](installation/README.md)
 * [HTML / custom website](installation/html-website.md)
 * [Google Tag Manager](installation/google-tag-manager.md)
 * [WordPress](installation/wordpress.md)
@@ -37,11 +37,14 @@
 * [Themes and colours](banner/themes-and-colors.md)
 * [Preference centre and cookie list](banner/preference-center.md)
 * [Reopen button and consent withdrawal](banner/reopen-button.md)
+* [Share consent across subdomains](banner/subdomain-consent.md)
+* [A/B testing the banner design](banner/ab-testing.md)
 * [Google Consent Mode banner template](banner/google-consent-mode-template.md)
 
 ## Cookies and scripts
 
 * [Cookie scanner](cookies-and-scripts/cookie-scanner.md)
+* [Cookie table for your cookie policy](cookies-and-scripts/cookie-table.md)
 * [Cookie categories](cookies-and-scripts/cookie-categories.md)
 * [Services and per-service consent](cookies-and-scripts/services.md)
 * [Script blocking](cookies-and-scripts/script-blocking.md)
@@ -83,6 +86,7 @@
 ## Developers
 
 * [JavaScript API](developers/javascript-api.md)
+* [React and Next.js](developers/react-and-nextjs.md)
 * [Consent events](developers/events.md)
 * [IAB TCF and US privacy APIs](developers/tcf-and-usp-apis.md)
 * [Cross-device consent](developers/cross-device-consent.md)

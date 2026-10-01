@@ -9,13 +9,15 @@ After a visitor chooses, a small floating button stays on the page. Clicking it 
 * Choose its side (left or right) in Banner Builder → Layout.
 * Place it where it isn't covered by a chat widget or cookie-free zone.
 
-## Open the banner from your own link
+## Open the choices from your own link
 
-You can also add a "Cookie settings" link to your footer:
+You can also add a "Cookie settings" link to your footer. It opens the preference centre (with the US State Laws template, the opt-out pop-up), as the floating button does:
 
 ```html
-<a href="#" onclick="window.CookieManager && window.CookieManager.forceShowBanner(); return false;">Cookie settings</a>
+<a href="#" onclick="window.CookieManager && window.CookieManager.showPreferences(); return false;">Cookie settings</a>
 ```
+
+To show the first-layer banner instead, call `window.CookieManager.forceShowBanner()`.
 
 See [JavaScript API](../developers/javascript-api.md).
 
@@ -26,3 +28,5 @@ With the US State Laws template, the **Do Not Sell or Share My Personal Informat
 ## What happens on withdrawal
 
 When a visitor turns a category off, Okito sends the consent mode update (`denied`), updates the other platforms, stops releasing scripts in that category and deletes the category's cookies that it can reach.
+
+A choice that refuses something the visitor had allowed (a category, one service, or an IAB TCF purpose, vendor or special feature) is recorded as a **withdrawal** in the consent history and the audit log, so your records show when consent was withdrawn.

@@ -34,7 +34,7 @@ In Consent Management, choose a period (all records, the last 30 days, 90 days o
 * the categories granted, the regime (GDPR, US State Laws or IAB TCF) and how the choice was made,
 * country and region,
 * banner ID, banner version, the hash of the notice shown and its language, and the time on the visitor's device,
-* for US State Laws: Global Privacy Control, and the sale, sharing and sensitive data opt-outs,
+* for US State Laws: Global Privacy Control, the sale and sharing opt-outs, the sensitive data choice (allowed or not, on a site that processes sensitive data; not allowed is also shown as a limit on its use) and the IAB GPP string the page gave vendors,
 * for IAB TCF: the TC string (or why it was not stored), the Global Vendor List version, and the purposes and vendors,
 * the shortened IP address and the browser (user agent).
 
@@ -46,3 +46,13 @@ An export holds at most 200,000 records, the newest first. If there are more, th
 * **Privacy requests**: find a visitor's records by their visitor ID (visitors see it in the preferences window) when you handle an [access or deletion request](privacy-requests.md).
 
 Consent records are included on every plan.
+
+## How long records are kept
+
+Okito keeps consent records until you set a retention period. To set one, open **Compliance → Legal basis**, add or edit a record and enter a **Retention period (days)**. From then on, the site's consent records, their history and the consent events in the audit log are deleted once they are older than that period; a check runs every hour. With several records, the longest period applies.
+
+* **At least 400 days**: a consent is valid for 13 months, and the record is its proof. A shorter period counts as 400 days.
+* **US opt-out records: at least 730 days**, as the California regulations require for records of consumer requests.
+* **Kept**: privacy requests and their events. Each deletion is written to the audit log with the period, the cut-off date and the number of records deleted.
+
+There is no legal period that fits every site: choose one that covers the time you may need to show a visitor's consent, and match your own privacy or retention policy. Records that are deleted cannot be restored. Left empty, nothing is deleted.

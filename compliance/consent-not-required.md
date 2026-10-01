@@ -4,7 +4,7 @@ description: What visitors see, and whether measurement starts, outside the regi
 
 # Where consent is not required
 
-Okito asks for consent first in the regions whose laws expect it: the EEA, the UK, Switzerland, Türkiye, Brazil, Canada, South Africa, Australia, Saudi Arabia, Argentina, Andorra, the Faroe Islands and, with the GDPR template, the US. For all other visitors (for example in Japan), choose the behaviour in Banner Builder → General → **Where consent is not required (e.g. Japan)**:
+Okito asks for consent first in the regions whose laws expect it: the EEA, the UK, Switzerland, Türkiye, Brazil, Canada, South Africa, Australia, Saudi Arabia, Argentina, Andorra, the Faroe Islands, South Korea, China, India and, with the GDPR template, the US. For all other visitors (for example in Japan), choose the behaviour in Banner Builder → General → **Where consent is not required (e.g. Japan)**:
 
 | Option | Banner | Google consent mode for these visitors |
 | --- | --- | --- |

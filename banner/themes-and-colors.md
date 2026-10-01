@@ -21,4 +21,6 @@ In the **Colors** tab, choose **Light**, **Dark** or **Custom**. With Custom you
 
 {% hint style="warning" %}
 Keep **Reject All** as visible as **Accept All**. Regulators treat a faint or hidden reject option as a dark pattern. Check the text contrast, too.
+
+The Colors tab warns you (in the Shopify app too) when the Reject All text is hard to read while the Accept All text is not, or when Reject All blends into the banner like plain text while Accept All is a visible button.
 {% endhint %}
