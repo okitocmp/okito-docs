@@ -27,7 +27,9 @@ Don't paste the Okito script into your theme as well, and deactivate other cooki
 
 ## Early blocker
 
-Turn on **Okito → Settings → Early blocker** to hold back tracking tags that your theme or other plugins write into the page (Meta Pixel, TikTok, Hotjar, Microsoft Clarity, LinkedIn and others) until the visitor consents. It is off by default. Your theme, other plugins, libraries and Google tags are not affected; see [Early blocker](../cookies-and-scripts/script-blocking.md#early-blocker). Check your site after turning it on.
+**Okito → Settings → Early blocker** holds back tracking tags that your theme or other plugins write into the page (Meta Pixel, TikTok, Hotjar, Microsoft Clarity, LinkedIn and others) until the visitor consents. Your theme, other plugins, libraries and Google tags are not affected; see [Early blocker](../cookies-and-scripts/script-blocking.md#early-blocker).
+
+From version 1.1.6 it is on by default and printed inline at the top of the page, so the page does not wait for a separate request; the plugin keeps a copy from Okito and refreshes it every 12 hours. Sites updating from an older version get it turned on once, with a notice in the WordPress admin; a choice you make in Settings afterwards is kept. Turn it off only if your site deliberately runs such a tag before consent.
 
 ## Filters for developers
 

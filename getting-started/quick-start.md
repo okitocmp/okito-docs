@@ -22,14 +22,16 @@ The wizard creates your banner. You can change everything later in [Banner Build
 
 The **Install banner** page shows the code for your site. For most websites, you paste two things at the top of `<head>`:
 
-1. The **Consent Mode snippet** (only if you use Google tags in advanced mode). In basic mode on an IAB TCF site, **Install banner** shows the IAB TCF stub on its own instead (on a US State Laws site without IAB TCF, the IAB GPP stub); paste that.
-2. The **Okito script**:
+1. The **installation code**. Its first script is the [early blocker](../cookies-and-scripts/script-blocking.md#early-blocker), which holds back tracking tags written in your page until the visitor consents; the next one is the Okito script:
 
 ```html
+<script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY/blocker.js"></script>
 <script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY"></script>
 ```
 
-Using WordPress, Shopify, Webflow, Framer or Google Tag Manager? Use the matching guide in [Installation](../installation/installation.md); those integrations add the code for you.
+2. The **Consent Mode snippet** (only if you use Google tags in advanced mode), right below the early blocker line. In basic mode on an IAB TCF site, **Install banner** shows the IAB TCF stub on its own instead (on a US State Laws site without IAB TCF, the IAB GPP stub); paste that in the same place.
+
+Using WordPress, Shopify, Webflow, Framer or Google Tag Manager? Use the matching guide in [Installation](../installation/README.md); those integrations add the code for you.
 
 ## 4. Check it works
 

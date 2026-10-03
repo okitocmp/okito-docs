@@ -10,18 +10,23 @@ For consent mode to work, the consent mode **default** must be set before the fi
 
 ```html
 <head>
-  <!-- 1. Okito Consent Mode snippet (sets the defaults) -->
+  <!-- 1. Okito early blocker (the first script of the installation code) -->
+  <script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY/blocker.js"></script>
+
+  <!-- 2. Okito Consent Mode snippet (sets the defaults) -->
   <script>/* from Install banner */</script>
 
-  <!-- 2. Okito script -->
+  <!-- 3. Okito script -->
   <script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY"></script>
 
-  <!-- 3. Google Tag Manager / gtag.js / Google tag gateway scripts -->
+  <!-- 4. Google Tag Manager / gtag.js / Google tag gateway scripts -->
   <script>(function(w,d,s,l,i){ /* GTM */ })(window,document,'script','dataLayer','GTM-XXXX');</script>
 
-  <!-- 4. Everything else -->
+  <!-- 5. Everything else -->
 </head>
 ```
+
+The [early blocker](../cookies-and-scripts/script-blocking.md#early-blocker) does not touch Google tags; it comes first because it only holds tracking tags that come after it.
 
 ## With Google Tag Manager
 

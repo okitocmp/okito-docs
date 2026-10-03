@@ -22,8 +22,8 @@ You can also type a Website Key made in the Okito dashboard into **Settings**. T
 
 ## What the app does
 
-* The theme app embed adds the Consent Mode defaults and the Okito script to your storefront, the IAB TCF stub when your banner can use IAB TCF, and the IAB GPP stub when it shows the US State Laws notice without IAB TCF.
-* **Settings**: your Website Key and an on/off switch.
+* The theme app embed adds the [early blocker](#early-blocker) (unless you turn it off), the Consent Mode defaults and the Okito script to your storefront, the IAB TCF stub when your banner can use IAB TCF, and the IAB GPP stub when it shows the US State Laws notice without IAB TCF.
+* **Settings**: your Website Key, an on/off switch and the early blocker.
 * **Banner Build**: change the banner from inside Shopify, or open the full Banner Builder in the Okito dashboard.
 * **Shopify's Customer Privacy API**: every choice is passed to Shopify, so Shopify's own analytics and the pixels in **Settings → Customer events** follow it too. Analytics → `analytics`, advertising → `marketing` and `sale_of_data` (a US opt-out turns both off), functional → `preferences`.
 
@@ -33,7 +33,9 @@ Use one consent banner. If Shopify's own cookie banner (Customer Privacy) is on 
 
 ## Early blocker
 
-Turn on **Settings → Early blocker** in the Okito app to hold back tracking tags that load after the Okito app embed (Meta Pixel, TikTok, Hotjar, Microsoft Clarity, LinkedIn and others) until the visitor consents. It is off by default. Your theme, other apps' non-tracking code and Google tags are not affected; see [Early blocker](../cookies-and-scripts/script-blocking.md#early-blocker). Preview your store after turning it on.
+**Settings → Early blocker** in the Okito app holds back tracking tags that load after the Okito app embed (Meta Pixel, TikTok, Hotjar, Microsoft Clarity, LinkedIn and others) until the visitor consents. Your theme, other apps' non-tracking code and Google tags are not affected; see [Early blocker](../cookies-and-scripts/script-blocking.md#early-blocker).
+
+It is on by default. The app update that made it the default turned it on once for every store, including stores where it was off. A choice you make in **Settings** after that is kept; saving **Settings** for another reason doesn't change it. To turn it off, untick **Early blocker** and click **Save settings**. Turn it off only if your store deliberately runs such a tag before consent; if you had turned it off before the update, turn it off again.
 
 Tags written in `layout/theme.liquid` above the app embed can still run first. To hold those too, paste the early blocker as the first line inside `<head>` in `theme.liquid`:
 
@@ -43,4 +45,4 @@ Tags written in `layout/theme.liquid` above the app embed can still run first. T
 
 ## Without the app
 
-You can also paste the Okito code into `layout/theme.liquid` inside `<head>` (**Online Store → Themes → Edit code**). Use either the app embed or `theme.liquid`, not both.
+You can also paste the code from **Install banner** at the top of `<head>` in `layout/theme.liquid` (**Online Store → Themes → Edit code**). Use either the app embed or `theme.liquid`, not both.

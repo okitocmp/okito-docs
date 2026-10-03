@@ -4,7 +4,7 @@ description: Install Okito with the Okito CMP template from the GTM Community Te
 
 # Google Tag Manager
 
-If Google Tag Manager (GTM) manages your tags, install Okito inside GTM with the **Okito CMP** template. The template sets the consent mode defaults and loads the Okito script, so you don't paste anything into your site's code.
+If Google Tag Manager (GTM) manages your tags, install Okito inside GTM with the **Okito CMP** template. The template sets the consent mode defaults and loads the Okito script, so you don't paste them into your site's code.
 
 {% hint style="warning" %}
 If your banner uses IAB TCF, tick **My banner uses IAB TCF** in the tag; see [IAB TCF sites](#iab-tcf-sites).
@@ -26,6 +26,12 @@ If your banner uses IAB TCF, tick **My banner uses IAB TCF** in the tag; see [IA
 {% hint style="danger" %}
 If you use the template, don't also paste the Okito script or the Consent Mode snippet into your site. With the template, GTM installs both.
 {% endhint %}
+
+The template doesn't add the [early blocker](../cookies-and-scripts/script-blocking.md#early-blocker). If tracking tags are written straight into your pages, paste only its line, not the rest of the installation code, as the first line inside `<head>`, above the GTM container:
+
+```html
+<script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY/blocker.js"></script>
+```
 
 ## Template settings
 
@@ -57,8 +63,10 @@ Okito maps its categories to consent types: Advertisement → `ad_storage`, `ad_
 
 GTM does not wait for the Okito script, so Google tags in the container can start before it has loaded. If your banner uses IAB TCF, tick **My banner uses IAB TCF** in the tag (update the template first if you don't see the setting): the tag then adds the TCF API stub, so Google tags find `__tcfapi` and get the TC string once the Okito script has loaded. Without it, they follow Google Consent Mode only and [debug mode](../google/debug-mode.md) warns that Google tags ran before the TCF API was available. If you turn TCF off later, untick it. Likewise, tick or untick **My banner shows the US State Laws notice (IAB GPP)** when you switch to or from the US State Laws template or turn IAB TCF on or off.
 
-The template's stub has no `__tcfapi` locator frame, so vendors inside iframes get the TCF API only once the Okito script has loaded. If you need that from the first moment, use the Consent Mode snippet and the Okito script from **Install banner** above the GTM container instead of the template.
+The template's stub has no `__tcfapi` locator frame, so vendors inside iframes get the TCF API only once the Okito script has loaded. If you need that from the first moment, use the installation code and the Consent Mode snippet from **Install banner** (the early blocker first) above the GTM container instead of the template.
 
 ## Check it
 
 Open **Preview** in GTM. In Tag Assistant, the **Consent** tab should show the default state at *Consent Initialization* and an update after you click in the banner. You can also add `?okito_debug=1` to your page URL; see [Debug mode](../google/debug-mode.md).
+
+**Verify** on **Install banner** reads only your page's HTML, so it can't see the Okito tag and does not confirm a GTM install; see [Verify your installation](verify-installation.md#with-google-tag-manager).

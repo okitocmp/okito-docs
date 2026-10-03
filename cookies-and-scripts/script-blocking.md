@@ -22,7 +22,7 @@ Necessary scripts, the Okito script itself and scripts with no known category ar
 
 Scripts served from your own domain (your theme, jQuery, page builders, forms, sliders) run without waiting for consent, because they don't store or read tracking data. Okito holds back a script on your own domain only when it matches your rules or scan results, or when its path is clearly analytics or advertising (for example Matomo, a pixel plugin, or a Google tag served through Google tag gateway).
 
-Okito blocks scripts that your page or tag manager adds after it has loaded. Tags written straight into your page's HTML run as the browser reads the page, before the Okito script can act: hold them back with the [early blocker](#early-blocker), or mark them yourself (see [Mark scripts manually](manual-script-marking.md)).
+Okito blocks scripts that your page or tag manager adds after it has loaded. Tags written straight into your page's HTML run as the browser reads the page, before the Okito script can act: the [early blocker](#early-blocker), the first script of the installation code, holds back those from known tracking services, and you can mark any of them yourself (see [Mark scripts manually](manual-script-marking.md)).
 
 ## Blocking rules
 
@@ -33,11 +33,11 @@ Open **Script Blocking** in the dashboard:
 
 ## Scripts that load before Okito
 
-A script written directly into your page can run before Okito does. Use the early blocker, or mark such scripts so the browser never runs them on its own; see [Mark scripts manually](manual-script-marking.md).
+A script written directly into your page can run before Okito does. The early blocker holds back the ones from known tracking services; mark the others so the browser never runs them on its own (see [Mark scripts manually](manual-script-marking.md)).
 
 ## Early blocker
 
-The early blocker holds back tracking tags written straight into your page until the visitor consents. Copy it from **Install banner** and paste it as the **very first line inside `<head>`**, above every other script, without `async`:
+The early blocker holds back tracking tags written straight into your page until the visitor consents. It is the first script of the installation code on **Install banner**, and it stays the **very first script in `<head>`**, above every other script, without `async`:
 
 ```html
 <head>
@@ -51,10 +51,20 @@ The early blocker holds back tracking tags written straight into your page until
 * Your own scripts, libraries and CDNs (jQuery, jsDelivr, cdnjs), chat, payment, other maps and video iframes, and Google tags are never held back. Google tags follow [Google Consent Mode](../google/basic-and-advanced.md).
 * As soon as the Okito script starts, it takes over: your blocking rules decide, a script you allow is released at once, and the visitor's choice releases the rest. Each tag runs once.
 
+It is on by default:
+
+* **Your own code**: the `blocker.js` line is the first script of the code you copy from **Install banner** or **Code Generator**. Code copied before it became part of the installation code has no such line: paste it as the first line inside `<head>`, or copy the code again.
+* **WordPress** (plugin 1.1.6 and later): on by default, and printed inline at the top of the page, so the page does not wait for a separate request. Sites updating from an older version get it turned on once, with a notice in the WordPress admin. See [WordPress](../installation/wordpress.md#early-blocker).
+* **Shopify**: on by default. The app update that made it the default turned it on once for every store, including stores where it was off; a choice you make in the app's **Settings** after that is kept. See [Shopify](../installation/shopify.md#early-blocker).
+
+Google Tag Manager, Webflow and Framer add the Okito script for you, but not the early blocker: if your pages have tags from these services written in them, paste the `blocker.js` line as the first line inside `<head>` yourself.
+
+If your site deliberately runs one of these tags before consent, turn the early blocker off: remove the `blocker.js` line from your code, or turn off **Early blocker** in the WordPress plugin or the Shopify app. The Okito script works without it and still holds the tags your page or tag manager adds after it has loaded.
+
 {% hint style="info" %}
 The browser may still download a tag file written in your HTML while it reads the page (browsers fetch script files they see in the page early, before any script can run); the early blocker stops it from running, so it sets no cookies, but the service receives the request. To avoid the download as well, mark the tag with `type="text/plain"` (see [Mark scripts manually](manual-script-marking.md)).
 
-**WordPress:** with **Early blocker** on in the Okito plugin, the plugin does this for you. Before the page is sent, tags from the services above get the `type="text/plain"` marking, and preload or preconnect hints for them are removed, so they are not downloaded before consent. Page caches store the marked page. Shopify apps cannot change the theme's HTML, so on Shopify mark such tags yourself. The [tracking tag check](#tracking-tags-that-load-before-consent) lists them.
+**WordPress:** with **Early blocker** on in the Okito plugin (the default from version 1.1.6), the plugin does this for you. Before the page is sent, tags from the services above get the `type="text/plain"` marking, and preload or preconnect hints for them are removed, so they are not downloaded before consent. Page caches store the marked page. Shopify apps cannot change the theme's HTML, so on Shopify mark such tags yourself. The [tracking tag check](#tracking-tags-that-load-before-consent) lists them.
 {% endhint %}
 
 ## Tracking tags that load before consent
@@ -64,13 +74,13 @@ Every [cookie scan](cookie-scanner.md) also reads your pages as your server send
 * **Script tags** (`<script src="…">`): the browser downloads the file as soon as it reads the page. Replace the opening tag with the one shown, which adds `type="text/plain"` and the category, as in [Mark scripts manually](manual-script-marking.md). Okito runs it once the visitor consents.
 * **Pixel images** (`<img src="…">` outside `<noscript>`): remove them, or add the pixel from a marked script.
 * **Preload and preconnect hints** (`<link rel="preload">`, `preconnect`, `prefetch`, `modulepreload`) for these services: remove them. `dns-prefetch` is not listed; it only asks your visitor's DNS resolver.
-* **Inline code** that adds a tracker's script: listed when no synchronous Okito script (the early blocker or the Okito script without `async`) comes before it and the scan saw your homepage contact that service before consent. Add the early blocker at the top of `<head>`, or mark the script (keep the code inside unchanged).
+* **Inline code** that adds a tracker's script: listed when no synchronous Okito script (the early blocker or the Okito script without `async`) comes before it and the scan saw your homepage contact that service before consent. Keep the early blocker (the first script of the installation code) at the top of `<head>`, or mark the script (keep the code inside unchanged).
 
 The check also lists the requests your homepage sent to these services before any choice was made. If a listed tag explains them, fixing that tag is enough; otherwise they come from other code, for example a Google Tag Manager tag that fires on every page.
 
 Tags that are already marked, tags with `data-okito-ignore`, Google tags and your own scripts are never listed. Pages after the homepage are read without cookies, so a tag your server prints only after consent is not listed.
 
-On WordPress, turn on **Early blocker** in the Okito plugin: from plugin version 1.1.5 it marks these tags for you. On Shopify, a tag added by an app embed (Themes → Customize → App embeds) cannot be edited in the theme code: turn the embed off, or use the app's own consent setting.
+On WordPress, **Early blocker** in the Okito plugin marks these tags for you (from plugin version 1.1.5; on by default from 1.1.6). On Shopify, a tag added by an app embed (Themes → Customize → App embeds) cannot be edited in the theme code: turn the embed off, or use the app's own consent setting.
 
 ## Tracking requests from your own code
 

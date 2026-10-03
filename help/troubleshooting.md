@@ -6,7 +6,7 @@ description: Fixes for the most common problems.
 
 ## The banner doesn't show
 
-1. **Is the script on the page?** View the page source and search for `cdn.okito.com/js/`. Check the key matches your website.
+1. **Is the script on the page?** View the page source and search for `cdn.okito.com/js/`. Check the key matches your website. The early blocker (`blocker.js`) alone shows no banner: the Okito script must be there too (with Google Tag Manager it isn't in the page source; check the Okito tag in GTM's **Preview**).
 2. **Is an ad blocker or privacy browser active?** Turn it off, or test in a private window without extensions.
 3. **Did you already choose?** The banner doesn't show again after a choice. Open a private window, or clear the site's storage.
 4. **Is the domain right?** The banner only loads on the website's domain and its subdomains. Check the domain in **Websites**.

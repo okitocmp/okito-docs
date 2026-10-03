@@ -27,9 +27,11 @@ $uid = hash('sha256', (string) $user->id);
 $signature = hash_hmac('sha256', $uid, getenv('OKITO_SIGNING_KEY'));
 ```
 
-4. Pass them to the banner. Before the Okito script:
+4. Pass them to the banner, below the early blocker and the Consent Mode snippet (if your code has one) and before the Okito script:
 
 ```html
+<script src="https://cdn.okito.com/js/YOUR_WEBSITE_KEY/blocker.js"></script>
+<!-- the Consent Mode snippet from Install banner, if you use it -->
 <script>
   window.okitoUserId = 'UID';        // leave unset for anonymous visitors
   window.okitoUserIdHashed = true;

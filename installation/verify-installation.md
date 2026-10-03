@@ -6,19 +6,23 @@ description: Confirm Okito is installed correctly on your live site.
 
 ## 1. Verify in the dashboard
 
-On **Install banner**, click **Verify**. Okito opens your live site and looks for the Okito script with your website key.
+On **Install banner**, click **Verify**. Okito opens your live site and looks for the Okito script with your website key. The early blocker line (`blocker.js`) on its own is not enough: it shows no banner, so paste the whole installation code (with Google Tag Manager, see [below](#with-google-tag-manager)).
 
 When the script is found, Okito also checks the order of the tags written in your page's HTML and lists what to fix:
 
 * the Consent Mode snippet is missing or comes after Google Tag Manager or gtag.js;
 * your banner uses IAB TCF but the TCF stub is missing or comes after Google tags (or the page has a stub it doesn't need);
-* the [early blocker](../cookies-and-scripts/script-blocking.md#early-blocker) is not the first script, or has `async` or `defer`;
+* the [early blocker](../cookies-and-scripts/script-blocking.md#early-blocker) is not the first script, or has `async` or `defer` (Next.js's and Nuxt's own chunk files above it, under `/_next/static/` or `/_nuxt/` and with `async`, `defer`, `type="module"` or `nomodule`, are fine; any other script the browser runs above it counts, your site's own included);
 * an optimisation plugin delays the Okito script or the Consent Mode snippet;
 * the Okito script is on the page twice, or another consent tool is installed.
 
 This check only sees the HTML: tags that Google Tag Manager or other scripts add later are not included. The [consent mode check](../google/consent-mode-check.md) and [debug mode](../google/debug-mode.md) look at what actually ran.
 
 Verification needs a public HTTPS address. It fails on `localhost`, password-protected staging sites and sites that block unknown visitors.
+
+### With Google Tag Manager
+
+Verify reads only the HTML your server sends, so it can't see the Okito tag that [Google Tag Manager](google-tag-manager.md) adds and does not confirm a GTM install: it reminds you to publish the container and check that the Okito tag fires on the page. If your page's HTML has only the early blocker line (`blocker.js`) and a GTM container, Verify says only the early blocker was found and gives both answers. If the Okito script comes from the Okito GTM template, that is expected: publish the container and check that the Okito tag fires. Don't paste the Okito script as well; GTM loads it. If you use GTM only for other tags, the Okito script line is missing: paste the whole installation code (the Okito script goes below the early blocker). Check a GTM install with **Preview** in GTM and [debug mode](../google/debug-mode.md).
 
 ## 2. Look at the banner
 
@@ -45,6 +49,6 @@ Run a [cookie scan](../cookies-and-scripts/cookie-scanner.md). Every scan also r
 
 | Problem | Fix |
 | --- | --- |
-| No banner | Check that the script is in the page source and your ad blocker is off. See [Troubleshooting](../help/troubleshooting.md). |
+| No banner | Check that the script is in the page source (with Google Tag Manager, check the Okito tag in GTM's **Preview** instead) and your ad blocker is off. See [Troubleshooting](../help/troubleshooting.md). |
 | Two banners | The script is installed twice (theme + plugin + GTM), or another consent tool is active. Keep one. |
-| Verify fails but the banner shows | The page Okito fetches doesn't contain the script (for example it's added only after the page loads). Put the script in the page's HTML. |
+| Verify fails but the banner shows | The page Okito fetches doesn't contain the script (for example it's added only after the page loads). Put the script in the page's HTML. With Google Tag Manager this is expected; see [With Google Tag Manager](#with-google-tag-manager). |
