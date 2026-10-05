@@ -10,7 +10,7 @@ Open **Websites** in the dashboard and add your domain. For a mobile app, choose
 
 Each website has:
 
-* its own **website key**, used in the script URL `https://cdn.okito.com/js/YOUR_WEBSITE_KEY`,
+* its own **website key**, used in the script URL `https://cdn.okito.com/js/YOUR_WEBSITE_KEY` (in an app, the `websiteId` of the [mobile SDK](../installation/mobile-apps.md#website-key-and-data-region)),
 * its own banner, cookie scans, script blocking rules and consent records,
 * its own [plan](../getting-started/plans-and-limits.md).
 

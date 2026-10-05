@@ -17,7 +17,7 @@ Microsoft Advertising's Universal Event Tracking (UET) tag has its own consent m
    ```js
    window.uetq.push('consent', 'update', { ad_storage: 'granted' }); // or 'denied'
    ```
-3. Returning visitors get the update from their stored choice on every page load.
+3. Returning visitors get the update from their stored choice on every page load, as soon as the Okito script runs.
 
 Because `uetq` is a queue that the UET tag reads when it loads, this works whether the UET tag loads before or after Okito.
 

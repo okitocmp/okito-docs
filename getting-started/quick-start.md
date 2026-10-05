@@ -31,7 +31,7 @@ The **Install banner** page shows the code for your site. For most websites, you
 
 2. The **Consent Mode snippet** (only if you use Google tags in advanced mode), right below the early blocker line. In basic mode on an IAB TCF site, **Install banner** shows the IAB TCF stub on its own instead (on a US State Laws site without IAB TCF, the IAB GPP stub); paste that in the same place.
 
-Using WordPress, Shopify, Webflow, Framer or Google Tag Manager? Use the matching guide in [Installation](../installation/installation.md); those integrations add the code for you.
+Using WordPress, Shopify, Webflow, Framer or Google Tag Manager? Use the matching guide in [Installation](../installation/README.md); those integrations add the code for you.
 
 ## 4. Check it works
 

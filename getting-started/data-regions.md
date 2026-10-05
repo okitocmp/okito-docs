@@ -13,7 +13,7 @@ When you create an account, you choose where its data is stored:
 
 Your account, websites, banners, scan results and consent records stay in that region. Sign-in at [app.okito.com](https://app.okito.com) sends you to the right region automatically.
 
-The Okito script URL is always `https://cdn.okito.com/js/YOUR_WEBSITE_KEY`, whatever the region; the key tells the CDN which region to use.
+The Okito script URL is always `https://cdn.okito.com/js/YOUR_WEBSITE_KEY`, whatever the region; the key tells the CDN which region to use. Apps work the same way: the [mobile SDKs](../installation/mobile-apps.md) use `https://cdn.okito.com` in both regions and send the website key with every request.
 
 {% hint style="warning" %}
 The region is fixed when the account is created. To move to another region, create a new account there and set up your websites again.
