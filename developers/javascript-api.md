@@ -27,7 +27,7 @@ window.cmAcceptAll();   // same as clicking "Accept All"
 window.cmDeclineAll();  // same as clicking "Reject All"
 ```
 
-These record the choice exactly like the banner buttons: consent records, consent mode update, script release and events.
+These apply the choice like the banner buttons: consent record, consent mode update, script release and events. Because any script on the page can call them, the consent record says the choice came through the API (method `api`; on IAB TCF sites `iab-tcf`, like every TCF choice), and the choice never counts as an answer in an [A/B test](../banner/ab-testing.md).
 
 ## Identify a signed-in user
 

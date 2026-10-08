@@ -8,19 +8,16 @@ Microsoft Advertising's Universal Event Tracking (UET) tag has its own consent m
 
 ## What Okito does
 
-1.  **Default**: when the Okito script loads, it pushes a consent default to the UET queue (`window.uetq`):
-
-    ```js
-    window.uetq.push('consent', 'default', { ad_storage: 'denied' });
-    ```
-
-    Visitors outside the regions that need consent start `granted`, following your [Where consent is not required](../compliance/consent-not-required.md) setting.
-2.  **Update**: when the visitor chooses, Okito pushes an update driven by the **Advertisement** category:
-
-    ```js
-    window.uetq.push('consent', 'update', { ad_storage: 'granted' }); // or 'denied'
-    ```
-3. Returning visitors get the update from their stored choice on every page load.
+1. **Default**: when the Okito script loads, it pushes a consent default to the UET queue (`window.uetq`):
+   ```js
+   window.uetq.push('consent', 'default', { ad_storage: 'denied' });
+   ```
+   Visitors outside the regions that need consent start `granted`, following your [Where consent is not required](../compliance/consent-not-required.md) setting.
+2. **Update**: when the visitor chooses, Okito pushes an update driven by the **Advertisement** category:
+   ```js
+   window.uetq.push('consent', 'update', { ad_storage: 'granted' }); // or 'denied'
+   ```
+3. Returning visitors get the update from their stored choice on every page load, as soon as the Okito script runs.
 
 Because `uetq` is a queue that the UET tag reads when it loads, this works whether the UET tag loads before or after Okito.
 

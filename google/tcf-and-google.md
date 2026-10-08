@@ -34,7 +34,7 @@ A purpose you do not allow Google with a [publisher restriction](../compliance/i
 
 ## Additional Consent
 
-Turn on **Additional Consent (AC String)** to ask for consent for Google's ad technology providers that are not registered in the IAB TCF. Okito creates the AC string alongside the TC string. It is available to tags through `__tcfapi` (`addtlConsent`), in the `localStorage` key `IABTCF_AddtlConsent` (in apps, the same key in the [mobile SDKs' storage](../installation/mobile-apps.md)) and, for server-side use, in the first-party `addtl_consent` cookie (kept as long as the `euconsent-v2` cookie).
+Turn on **Additional Consent (AC String)** to ask for consent for Google's ad technology providers that are not registered in the IAB TCF. Okito creates the AC string when the visitor chooses, alongside the TC string, from their choices for these providers in the preference centre (**Accept all**: all of them; **Reject all**: none), and keeps it with the choice; nothing is written before a choice. It is available to tags through `__tcfapi` (`addtlConsent`), in the `localStorage` key `IABTCF_AddtlConsent` (in apps, the same key in the [mobile SDKs' storage](../installation/mobile-apps.md)) and, for server-side use, in the first-party `addtl_consent` cookie (kept as long as the `euconsent-v2` cookie).
 
 ## Load order and the TCF stub
 

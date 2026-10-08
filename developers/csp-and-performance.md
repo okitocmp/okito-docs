@@ -14,6 +14,8 @@ If your site sends a Content-Security-Policy header, allow Okito:
 | `connect-src` | `https://cdn.okito.com https://*.okito.com` |
 | `frame-src` | not needed |
 
+Older installation code that loads the script from `app.okito.com` also needs `https://app.okito.com` in `script-src`. Better, replace it with the current code from **Websites**, which loads from `cdn.okito.com`.
+
 Example:
 
 ```
@@ -22,9 +24,11 @@ Content-Security-Policy: script-src 'self' 'nonce-RANDOM' https://cdn.okito.com 
 
 Add the nonce to the Consent Mode snippet: `<script nonce="RANDOM">…</script>`.
 
+Scripts you [mark](../cookies-and-scripts/manual-script-marking.md#how-marked-scripts-run) keep their nonce when Okito runs them, so give marked inline scripts the same nonce. Okito never runs code from text (no `eval`), so no `'unsafe-eval'` is needed.
+
 ## Subresource Integrity
 
-Don't add an `integrity` hash to the Okito script. Its content changes when you save your banner, so a fixed hash would block it.
+Don't add an `integrity` hash to the Okito script. Its content changes when you save your banner, so a fixed hash would block it. The [Webflow app](../installation/webflow.md) pins a separate, versioned loader whose content never changes.
 
 ## Page speed
 

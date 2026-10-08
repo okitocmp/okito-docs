@@ -35,6 +35,16 @@ Inline scripts work the same way:
 </script>
 ```
 
+## How marked scripts run
+
+A marked script runs once, when the visitor consents to its category (or as the page loads, for visitors who already consented). Okito puts a normal script with the same attributes and code in its place, so it runs as it would have from your page:
+
+* Marked scripts released together run in the order they appear in the page, also when they belong to different categories.
+* An inline script waits until the marked files without `async` above it have run, so an inline `lib.init()` below a marked `lib.js` finds the library. A file with `async` runs as soon as it has loaded, as it would in the page.
+* A Content-Security-Policy nonce on a marked script is kept: give marked inline scripts the same `nonce` as your other scripts. Okito never turns text into code (no `eval`), so your policy needs no `'unsafe-eval'` for them.
+* `onload` and load listeners on the marked script fire, errors reach `window.onerror`, and `document.currentScript` is the script itself.
+* Only `type="text/plain"` holds a script back. A data block with a category, such as `<script type="application/ld+json">`, keeps its type and is never run.
+
 ## Link a script to a service
 
 To let visitors switch the script with a single [service](services.md), add `data-okito-service` with the service's slug:
@@ -60,5 +70,3 @@ Put the address in `data-src` instead of `src` and add the category. Okito shows
 * The script is written directly into your page's HTML, so it can run before Okito. The [early blocker](script-blocking.md#early-blocker) holds known trackers without marking them.
 * You use [basic consent mode](../google/basic-and-advanced.md) and your Google tag is written directly in the page.
 * The script's URL is too generic for a blocking rule.
-
-A marked script runs once, when consent is given (or on each page load for visitors who already consented).

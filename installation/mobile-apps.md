@@ -10,7 +10,7 @@ Okito's mobile SDKs show a native consent banner and preference centre, create t
 
 1. In the dashboard, add a new property and choose **Mobile app**. Enter the app name, platform (iOS or Android) and the bundle ID / package name.
 2. Configure the consent screen in Banner Builder (the **Mobile SDK** tab). The privacy policy, cookie policy and Aydınlatma Metni links from **Content → Links** appear under the banner text, as on the web ([details](../banner/content-and-languages.md#privacy-policy-and-kvkk-disclosure-notice-links)).
-3. Open **Install banner**. It shows the initialisation code for your app, with your website ID and API address filled in.
+3. Open **Install banner**. It shows the initialisation code for your app, with your website key filled in.
 
 ## iOS (Swift Package)
 
@@ -28,8 +28,8 @@ Then initialise it at app start with the code from Install banner:
 import OkitoCMP
 
 OkitoCMP.shared.initialize(.init(
-    baseURL: URL(string: "COPY_FROM_INSTALL_BANNER")!,
-    websiteId: "COPY_FROM_INSTALL_BANNER",
+    baseURL: URL(string: "https://cdn.okito.com")!,
+    websiteId: "YOUR_WEBSITE_KEY",
     visitorId: UUID().uuidString,
     consentLanguage: "EN",
     cmpSdkId: 508,
@@ -53,8 +53,8 @@ Initialise it in your `Application` class with the code from Install banner:
 OkitoCMP.initialize(
     context = this,
     options = OkitoCMP.InitOptions(
-        baseUrl = "COPY_FROM_INSTALL_BANNER",
-        websiteId = "COPY_FROM_INSTALL_BANNER",
+        baseUrl = "https://cdn.okito.com",
+        websiteId = "YOUR_WEBSITE_KEY",
         visitorId = java.util.UUID.randomUUID().toString(),
         consentLanguage = "EN",
         cmpSdkId = 508,
@@ -65,18 +65,28 @@ OkitoCMP.initialize(
 
 The publisher country in the TC string (`PublisherCC`) comes from your site's settings in the Okito dashboard; the apps don't set it.
 
+## Website key and data region
+
+`websiteId` is your [website key](../account/websites-and-keys.md#the-website-key) (`eu_okito-…`, `tr_okito-…` or `okito-…`), the same key as in your website's script URL.
+
+`baseURL` (`baseUrl` on Android) is optional: without it the SDK uses `https://cdn.okito.com`, the same address in both [data regions](../getting-started/data-regions.md). The SDK sends the website key with every request, so the app gets your site's settings from its region and its consent records are stored there.
+
+{% hint style="info" %}
+Code from an earlier Install banner may have `app.okito.com` and a website ID such as `3f2b6c1e-…`. Replace the ID with your website key, and `app.okito.com` with `cdn.okito.com` (or leave `baseURL` out).
+{% endhint %}
+
 ## API
 
 Both SDKs mirror the web `__tcfapi`:
 
-| Call                                                 | What it does                                                |
-| ---------------------------------------------------- | ----------------------------------------------------------- |
-| `acceptAll()` / `rejectAll()`                        | Save a choice without the UI.                               |
-| `save(purposes, vendors, specialFeatures, …)`        | Save a granular choice.                                     |
-| `getTCData()`                                        | The current TC data, or none if the user hasn't chosen yet. |
-| `addEventListener { … }` / `removeEventListener(id)` | Be notified when consent changes.                           |
-| `reset()`                                            | Clear the stored consent.                                   |
-| `cmpStatus`, `eventStatus`                           | Loading state and the last event, as in `__tcfapi`.         |
+| Call | What it does |
+| --- | --- |
+| `acceptAll()` / `rejectAll()` | Save a choice without the UI. |
+| `save(purposes, vendors, specialFeatures, …)` | Save a granular choice. |
+| `getTCData()` | The current TC data, or none if the user hasn't chosen yet. |
+| `addEventListener { … }` / `removeEventListener(id)` | Be notified when consent changes. |
+| `reset()` | Clear the stored consent. |
+| `cmpStatus`, `eventStatus` | Loading state and the last event, as in `__tcfapi`. |
 
 ## Where consent is stored
 

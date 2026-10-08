@@ -8,7 +8,7 @@ With **Share consent across subdomains** on (Banner Builder → General → Othe
 
 * Your site's domain is the one set for the website in the dashboard (for example `example.com`). If it is set as `www.example.com`, Okito uses `example.com`. Pages on that domain and on its subdomains share the choice; other domains don't.
 * Every subdomain must load this website's Okito script (the same website key).
-* The choice is also kept in a cookie on your domain (`okito_shared_consent_…`, 13 months). Each subdomain keeps its own stored choice too; when a newer choice was made on another subdomain, it applies here before the banner decides.
+* The choice is also kept in a cookie on your domain (`okito_shared_consent_…`, 13 months). The cookie holds only the choice and its time, never the visitor ID. Each subdomain keeps its own stored choice too; when a newer choice was made on another subdomain, it applies here before the banner decides. The preferences window shows the visitor ID of the [consent record](../compliance/consent-records.md) only on the subdomain where the choice was made; on the others it shows none.
 * The newest choice wins: if the visitor changes their mind on one subdomain, the others follow on their next page view.
 * It works with the GDPR/KVKK banner and the US State Laws notice. Under the US notice, [Global Privacy Control](../compliance/us-state-laws.md) still applies on every subdomain: a shared choice never overrides it. With [IAB TCF](../compliance/iab-tcf.md) on, choices stay on each subdomain: a TCF choice does not fit in a shared cookie.
 

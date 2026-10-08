@@ -30,6 +30,7 @@ Two settings in the banner builder's US State Laws section (in the Shopify app: 
 When the visitor's browser sends the [Global Privacy Control](https://globalprivacycontrol.org/) signal:
 
 * In the US template, Okito treats it as an opt-out of sale and sharing, without the visitor having to click anything, and stores it as their choice: like any opt-out, only necessary cookies and scripts run.
+* Okito records the opt-out in your [consent records](consent-records.md), once per browser session, as proof that the signal was honoured. It creates no visitor ID for it: the record goes under the visitor ID the browser already has from an earlier choice, or else under a one-off receipt ID (starting `gpc_`) that is not kept in the browser and not shown to the visitor.
 * Google consent mode starts **denied** for that visitor, wherever they are.
 * The US Privacy string (`__uspapi`) reports the opt-out (`1YYN`).
 
