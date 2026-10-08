@@ -16,15 +16,15 @@ Each record shows:
 
 In IAB TCF mode, Okito also stores the TC string of each choice, together with the purposes, vendors and special features granted and the version of the Global Vendor List. Okito checks the TC string first: it is stored only if it is a valid IAB TC string that carries exactly the visitor's choice. Otherwise the choice is still recorded, with a note that the string was not stored.
 
-With every choice Okito also stores what the visitor saw: the banner version, a SHA-256 hash of the exact banner text shown, its language, and the time on the visitor's device. If the banner text changes, the hash changes, so you can tell which notice a visitor agreed to.
+With every choice Okito also stores what the visitor saw: the banner version, a fingerprint (SHA-256 hash) of the exact banner text shown, its language, and the time on the visitor's device. If the banner text changes, the hash changes, so you can tell which notice a visitor agreed to.
 
 The visitor's choice applies on your site at once, also when Okito's servers cannot be reached. If a record cannot be delivered, the browser keeps it and sends it on the visitor's next page (for up to 7 days); a newer choice replaces one that is still waiting. A record that arrives late never replaces a choice the visitor made after it. Its date is the time of the choice on Okito's server clock: the time it arrived minus how long it had been waiting in the browser, so a wrong clock on the visitor's device does not change it. The device's own time is kept as a separate field.
 
-The visitor ID is random: the banner creates it at the visitor's first choice and keeps it in the browser's local storage (`cm_visitor_id`). Okito does not fingerprint the visitor's device or use the Topics API. A visitor ID in an older format, from earlier versions of the Okito script, is replaced with a new random one at the visitor's next choice; records made before keep the old ID. The visitor's IP address is stored shortened to its network (for example `203.0.113.0` instead of `203.0.113.77`), which is enough for proof without keeping the full address.
+Okito does not fingerprint the visitor's device to build the visitor ID. The visitor's IP address is stored shortened to its network (for example `203.0.113.0` instead of `203.0.113.77`), which is enough for proof without keeping the full address.
 
 Records are listed newest first. Search by website, visitor ID or action, and choose how many rows to load per page.
 
-Once a visitor has made a choice on a device, the preferences window on that device shows the **visitor ID** the choice was recorded under and the date of the choice, in the banner language. It is the same visitor ID as in Consent Management and on the privacy request form: if a visitor quotes it, search for it to find their records. A choice taken over from another subdomain or another device shows no visitor ID there (it is shown where the choice was made), and neither does a [Global Privacy Control](us-state-laws.md#global-privacy-control-gpc) opt-out recorded without one.
+Once a visitor has made a choice on a device, the preferences window on that device shows their **visitor ID** and the date of their choice, in the banner language. It is the same visitor ID as in Consent Management and on the privacy request form: if a visitor quotes it, search for it to find their records.
 
 ## Export to CSV
 
@@ -43,7 +43,7 @@ An export holds at most 200,000 records, the newest first. If there are more, th
 ## Using records
 
 * **Proof of consent**: show when and how a visitor consented, for example in a complaint or audit.
-* **Privacy requests**: find a visitor's records by their visitor ID (visitors see it in the preferences window on the device and subdomain where they made the choice) when you handle an [access or deletion request](privacy-requests.md). For visitors without one, see [Privacy requests](privacy-requests.md#handling-requests).
+* **Privacy requests**: find a visitor's records by their visitor ID (visitors see it in the preferences window) when you handle an [access or deletion request](privacy-requests.md).
 
 Consent records are included on every plan.
 

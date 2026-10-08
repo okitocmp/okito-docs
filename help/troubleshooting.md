@@ -6,10 +6,10 @@ description: Fixes for the most common problems.
 
 ## The banner doesn't show
 
-1. **Is the script on the page?** View the page source and search for `cdn.okito.com/js/` (with the Webflow app, `cdn.okito.com/wf/`). Check the key matches your website. The script runs only when loaded over HTTPS from `cdn.okito.com` as in the installation code (older code with `app.okito.com` works too, but a Content-Security-Policy must then allow it; see [CSP](../developers/csp-and-performance.md)), not from a copy on another address. The early blocker (`blocker.js`) alone shows no banner: the Okito script must be there too (with Google Tag Manager it isn't in the page source; check the Okito tag in GTM's **Preview**). A Webflow site connected before the app's versioned loader needs **Update Okito script** once; see [Webflow](../installation/webflow.md).
+1. **Is the script on the page?** View the page source and search for `cdn.okito.com/js/`. Check the key matches your website. The early blocker (`blocker.js`) alone shows no banner: the Okito script must be there too (with Google Tag Manager it isn't in the page source; check the Okito tag in GTM's **Preview**).
 2. **Is an ad blocker or privacy browser active?** Turn it off, or test in a private window without extensions.
 3. **Did you already choose?** The banner doesn't show again after a choice. Open a private window, or clear the site's storage.
-4. **Is the domain right?** The banner only loads on the website's domain and its subdomains, not on `localhost`. Check the domain in **Websites**; to test locally, see [Staging sites and local testing](../account/websites-and-keys.md#staging-sites-and-local-testing).
+4. **Is the domain right?** The banner only loads on the website's domain and its subdomains. Check the domain in **Websites**.
 5. **Where consent is not required**: with **No banner, keep measurement on**, visitors outside the opt-in regions see no banner. Test with a VPN in an opt-in region (for example Germany).
 6. **Plan limits**: if the website reached its monthly pageviews, the banner is paused until next month or an upgrade.
 7. **Content-Security-Policy**: allow `https://cdn.okito.com`. See [CSP](../developers/csp-and-performance.md).

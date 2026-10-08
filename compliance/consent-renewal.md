@@ -10,7 +10,7 @@ A visitor's choice is stored in their browser. Okito shows the banner again when
 * the stored choice is missing or can't be read (for example after the visitor cleared their cookies or uses a new browser),
 * the visitor clicks the [reopen button](../banner/reopen-button.md) or your "Cookie settings" link,
 * you ask every visitor again (see below),
-* on [IAB TCF](iab-tcf.md#when-visitors-are-asked-again) sites, your vendor list, your publisher restrictions or the TCF policy version changed, or you turned IAB TCF on after the visitor chose (every visitor the GDPR applies to is then asked once with the TCF banner; see that page for the full list).
+* on [IAB TCF](iab-tcf.md#when-visitors-are-asked-again) sites, your vendor list, your publisher restrictions or the TCF policy version changed.
 
 ## Ask every visitor again
 

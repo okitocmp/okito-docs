@@ -50,4 +50,4 @@ Yes. See [US state privacy laws and GPC](../compliance/us-state-laws.md).
 
 ### Can I test on localhost?
 
-Not on `localhost` itself: the banner only loads on your website's domain and its subdomains. Open your local site under a subdomain instead, for example `local.example.com` pointed to your computer in its hosts file; see [Staging sites and local testing](../account/websites-and-keys.md#staging-sites-and-local-testing). To check only the design, use the preview in Banner Builder. Installation verification and cookie scans need a public HTTPS address.
+Yes, the banner loads on `localhost` for development. Installation verification and cookie scans need a public HTTPS address.

@@ -11,10 +11,6 @@ description: Connect Webflow and Okito installs the script for you.
 3. Sign in to Okito (or create an account) and pick the Okito website that matches your Webflow site's domain.
 4. Okito adds its script to your site's custom code. **Publish** your Webflow site.
 
-The app adds one small loader, `https://cdn.okito.com/wf/1.0.0/YOUR_WEBSITE_KEY.js`, which loads your Okito script. Webflow pins it with an integrity (SRI) hash under version `1.0.0`. The loader is the same for every site and never changes, so changes to your banner (texts, languages, an [A/B test](../banner/ab-testing.md)) and Okito updates apply without applying the script again or publishing.
-
-**Connected your site before the loader?** Then the app registered the Okito script itself (`/js/YOUR_WEBSITE_KEY`), whose pinned hash stops matching when your banner settings change or Okito updates, and the browser then refuses to load the banner. Switch once: open **Webflow** in the Okito dashboard, click **Update Okito script**, then **Publish** your Webflow site.
-
 The app doesn't add the [early blocker](../cookies-and-scripts/script-blocking.md#early-blocker). If tracking tags (Meta Pixel, Hotjar …) are written into your site's custom code, paste only its line, not the rest of the installation code, as the first line of **Site settings → Custom code → Head code**, above those tags:
 
 ```html

@@ -12,7 +12,7 @@ With the [US State Laws or GDPR & US State Laws template](../banner/consent-temp
 
 * US visitors see a notice at collection with a **Do Not Sell or Share My Personal Information** link.
 * The link opens a pop-up where the visitor can opt out of the sale, sharing and targeted advertising of their data.
-* Cookies and scripts run by default (on a site directed to minors, US visitors start opted out; see [below](#sensitive-data-and-sites-for-minors)). An opt-out turns off every category except necessary, deletes their cookies where possible and sends the denied consent mode update.
+* Cookies and scripts run by default (on a site directed to minors, US visitors start opted out; see [below](us-state-laws.md#sensitive-data-and-sites-for-minors)). An opt-out turns off every category except necessary, deletes their cookies where possible and sends the denied consent mode update.
 
 Add the same link to your site's footer. The CCPA requires it on your homepage.
 
@@ -21,16 +21,15 @@ Add the same link to your site's footer. The CCPA requires it on your homepage.
 Two settings in the banner builder's US State Laws section (in the Shopify app: **Banner Build**, US State Laws template content) follow what your site does. They also apply in the [iOS and Android apps](../installation/mobile-apps.md#us-state-privacy-laws):
 
 * **My site processes sensitive personal information** (health, precise geolocation, racial or ethnic origin, religion, sexual orientation, biometric or genetic data and the like). Most state laws require consent before such data is used, and the CCPA lets visitors limit its use. The pop-up then asks US visitors to allow its use; until they do, it is not allowed. Without this setting the pop-up shows no sensitive data choice, as there is nothing to allow or limit. You can change the checkbox's wording in the same section.
-* **My site is directed to children or teens under 16.** Several state laws require consent before a minor's data is sold or used for targeted advertising. US visitors then start opted out (only necessary cookies and scripts run) and Google consent mode starts denied for them, until they change it in the pop-up. If you added the Google Consent Mode code to your pages, copy it again from **Install banner** after changing this setting; with the [GTM template](../installation/google-tag-manager.md), untick **US visitors follow the opt-out model**. The WordPress plugin and the Shopify app already start US visitors denied until the Okito script loads.
+*   **My site is directed to children or teens under 16.** Several state laws require consent before a minor's data is sold or used for targeted advertising. US visitors then start opted out (only necessary cookies and scripts run) and Google consent mode starts denied for them, until they change it in the pop-up. If you added the Google Consent Mode code to your pages, copy it again from **Install banner** after changing this setting; with the [GTM template](../installation/google-tag-manager.md), untick **US visitors follow the opt-out model**. The WordPress plugin and the Shopify app already start US visitors denied until the Okito script loads.
 
-  The pop-up choice is the visitor's own. It is not the verifiable parental consent that the CCPA and several state laws require before the data of a child under 13 is sold or shared: a site directed to children under 13 must collect that consent itself (as under COPPA).
+    The pop-up choice is the visitor's own. It is not the verifiable parental consent that the CCPA and several state laws require before the data of a child under 13 is sold or shared: a site directed to children under 13 must collect that consent itself (as under COPPA).
 
 ## Global Privacy Control (GPC)
 
 When the visitor's browser sends the [Global Privacy Control](https://globalprivacycontrol.org/) signal:
 
 * In the US template, Okito treats it as an opt-out of sale and sharing, without the visitor having to click anything, and stores it as their choice: like any opt-out, only necessary cookies and scripts run.
-* Okito records the opt-out in your [consent records](consent-records.md), once per browser session, as proof that the signal was honoured. It creates no visitor ID for it: the record goes under the visitor ID the browser already has from an earlier choice, or else under a one-off receipt ID (starting `gpc_`) that is not kept in the browser and not shown to the visitor.
 * Google consent mode starts **denied** for that visitor, wherever they are.
 * The US Privacy string (`__uspapi`) reports the opt-out (`1YYN`).
 
