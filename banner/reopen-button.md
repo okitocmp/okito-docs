@@ -4,7 +4,7 @@ description: Let visitors change or withdraw consent at any time.
 
 # Reopen button and consent withdrawal
 
-After a visitor chooses, a small floating button stays on the page. Clicking it reopens the banner or preference centre, so the visitor can change or withdraw consent as easily as they gave it.
+After a visitor chooses, a small floating button stays on the page. Clicking it reopens the banner or preference centre, so the visitor can change or withdraw consent as easily as they gave it. It also works from the keyboard (Tab to it, then Enter or Space) and is announced to screen readers as "Cookie settings" in the banner language.
 
 * Choose its side (left or right) in Banner Builder → Layout.
 * Place it where it isn't covered by a chat widget or cookie-free zone.

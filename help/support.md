@@ -12,7 +12,7 @@ Google support asks customers to show that they contacted their consent manageme
 
 ## How to reach us
 
-* **Email:** [info@okito.com](mailto:info@okito.com)
+* **Email:** [support@okito.com](mailto:support@okito.com)
 * **Contact form:** [okito.com/contact](https://okito.com/contact/)
 
 Support is staffed and available to customers on every plan.

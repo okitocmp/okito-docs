@@ -16,7 +16,7 @@
 
 ## Installation
 
-* [Choose an installation method](installation/installation.md)
+* [Choose an installation method](installation/README.md)
 * [HTML / custom website](installation/html-website.md)
 * [Google Tag Manager](installation/google-tag-manager.md)
 * [WordPress](installation/wordpress.md)

@@ -24,7 +24,7 @@ API keys are secrets. Never put them in your website's front-end code. Website k
 
 `POST /api/external/cookie-scanner/scan`
 
-Runs a full scan and returns the cookies in the same response.
+Runs a full scan and returns the cookies in the same response. It waits up to about 85 seconds for the scan; see [Long scans](#long-scans) for what happens after that.
 
 ```bash
 curl -X POST https://app.okito.com/api/external/cookie-scanner/scan \
@@ -40,11 +40,12 @@ curl -X POST https://app.okito.com/api/external/cookie-scanner/scan \
 ```json
 {
   "success": true,
-  "scanId": "opt-1713690000000-abc123",
+  "scanId": "ext_1713690000000_abc12345",
   "websiteUrl": "https://example.com",
   "domain": "example.com",
   "durationMs": 4832,
   "summary": { "total": 17 },
+  "complete": true,
   "cookies": [
     {
       "name": "_ga",
@@ -59,13 +60,43 @@ curl -X POST https://app.okito.com/api/external/cookie-scanner/scan \
 }
 ```
 
+`complete` is `false` when the site loaded only partly; `incompleteReason` then says why. A site that could not be loaded at all answers `502` with `code: "SCAN_INCOMPLETE"`.
+
+#### Long scans
+
+If the scan has not finished after about 85 seconds, the answer is `202 Accepted`. The scan keeps running on our side; read its result from the [status endpoint](#asynchronous-scan) with the `scanId`:
+
+```json
+{
+  "success": true,
+  "scanId": "ext_1713690000000_abc12345",
+  "status": "running",
+  "message": "The scan is still running. Check back with this scan ID.",
+  "pollUrl": "/api/external/cookie-scanner/scan/async/ext_1713690000000_abc12345?domain=example.com"
+}
+```
+
+Call `pollUrl` as it is (it already names the domain) with the same key every few seconds until `status` is `completed` or `failed`. Treat `202` as "not finished yet", not as an error.
+
 ### Asynchronous scan
 
 For large sites, start a scan and poll for the result.
 
 `POST /api/external/cookie-scanner/scan/async` with `{ "websiteUrl": "https://example.com" }` returns a `scanId` with `status: "queued"`.
 
-`GET /api/external/cookie-scanner/scan/async/:scanId?domain=example.com` returns the status and, when `status` is `completed`, the cookies. Only the key that started the scan can read it.
+`GET /api/external/cookie-scanner/scan/async/:scanId?domain=example.com` returns the status (`queued`, `running`, `completed` or `failed`) and, when `status` is `completed`, the cookies. Only the key that started the scan can read it. A failed scan has an `error` such as `SCANNER_BUSY` or `SCAN_TIMEOUT`. Scans are kept for 7 days.
+
+### Scanner responses
+
+| Status | `code` | Meaning |
+| --- | --- | --- |
+| `200` | | The scan finished; the cookies are in the response. |
+| `202` | | Still running (synchronous scan after about 85 seconds, or any asynchronous start). Poll the status endpoint. |
+| `404` | `SCAN_NOT_FOUND` | No scan with this `scanId` was started by your key, or it is older than 7 days. |
+| `502` | `SCAN_INCOMPLETE` | The website could not be loaded for scanning. |
+| `502` | `SCANNER_UPSTREAM_ERROR` | The synchronous scan failed (it ran out of time, was interrupted, or the scanner failed). Try again later. |
+| `503` | `SCANNER_BUSY` | Too many scans are running. Retry after the `Retry-After` header (60 seconds); a refused request does not count against your key's rate limit. |
+| `503` | `SCAN_STATUS_UNAVAILABLE` | The synchronous scan started but its status could not be read. Poll its `scanId` a little later. |
 
 ## Policy Generator API
 

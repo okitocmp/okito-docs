@@ -11,11 +11,11 @@ Okito gives your visitors a public form to send privacy requests, and gives you 
 Visitors open [app.okito.com/privacy-request](https://app.okito.com/privacy-request). They enter:
 
 * your **Website ID** (link to the form with it filled in),
-* their **Visitor ID** (Okito's identifier stored in their browser),
+* their **Visitor ID** (shown with the date of the choice in your site's cookie preferences, on the device and subdomain where the choice was made; for records without one, you enter the ID yourself, see below),
 * the **request type**:
   * Delete / anonymise my data
   * Access / export my data (JSON)
-  * Correct inaccurate data (available under most US state privacy laws)
+  * Correct inaccurate data (available under the GDPR, KVKK and most US state privacy laws, not Iowa)
   * Appeal a denied request
 * the applicable law (KVKK, GDPR or a US state law), optional details and an optional contact email.
 
@@ -26,7 +26,7 @@ Link to the form from your privacy policy.
 Requests appear in the **Compliance** section of the dashboard, each with its due date:
 
 * **30 days** under the GDPR and KVKK,
-* **45 days** under US state laws.
+* **45 days** under US state laws (90 days in Iowa).
 
 For each request you can:
 
@@ -35,6 +35,13 @@ For each request you can:
 * complete or reject the request.
 
 A request is accepted only with a Visitor ID that has consent records on your site. Okito does not process requests on its own: you answer each one.
+
+Some visitors have records but no visitor ID to quote:
+
+* a [Global Privacy Control](us-state-laws.md#global-privacy-control-gpc) opt-out from a browser with no earlier choice is recorded under a one-off receipt ID (starting `gpc_`) that is never kept in the browser or shown to the visitor,
+* a choice taken over from another subdomain or another device shows its visitor ID only where it was made.
+
+If such a visitor contacts you (for example by email), verify who they are first, as the GDPR and US state laws require. Then look for their records in a [CSV export](consent-records.md#export-to-csv) by date, country and region, and browser (user agent): the visitor ID column holds the receipt ID or the original visitor ID. Many visitors can share a day, a country and a browser, so act on a record only when the details the verified requester gives you match it and no other record. In that case enter the ID on the privacy request form yourself and handle the request as usual; never hand an ID to someone you have not verified. If the match is not unique, don't use it: tell the requester you could not identify their records.
 
 ## Notifications
 
@@ -45,6 +52,8 @@ You get a dashboard notification and an email:
 * once when it becomes overdue (for requests overdue up to 30 days).
 
 The email says the request type and the due date; the visitor's details stay in the dashboard. The link opens the request list of the right website. The email follows **Compliance alerts** in Settings → Notifications; the dashboard notification always appears. US "Do Not Sell or Share" opt-outs apply at once and need no answer, so they send no notice.
+
+For a Shopify store, the email opens the Okito app in your Shopify admin. Turn **Compliance alerts** on or off in the app's **Compliance Management → Settings → Email notifications**; see [Shopify](../installation/shopify.md#emails-from-okito).
 
 The **Settings** tab of each compliance page shows where the related settings are: retention periods in the **Legal basis** tab, the "Do Not Sell or Share" link and notice in Banner Builder, and your email notifications in **Settings → Notifications**. Global Privacy Control is always honored.
 

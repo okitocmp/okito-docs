@@ -19,7 +19,7 @@ Missing consent mode or TCF signals on your Google tags? Contact [Okito support]
 ## What Okito does
 
 1. **Default**: before any Google tag runs, the Okito Consent Mode snippet (or the WordPress plugin, Shopify app or GTM template) sets the default consent state. In basic consent mode, the Okito script sets it instead. Visitors in regions where your banner asks for consent first start **denied**; other visitors start with the state you choose in [Where consent is not required](../compliance/consent-not-required.md).
-2. **Update**: when the visitor chooses (or returns with a stored choice), the Okito script sends a consent mode update with the granted or denied state for each consent type.
+2. **Update**: when the visitor chooses, the Okito script sends a consent mode update with the granted or denied state for each consent type. A returning visitor's stored choice is sent as soon as the Okito script runs, before the page has finished loading.
 3. **Settings**: Okito sets `ads_data_redaction`, optionally `url_passthrough`, and Okito's Google developer ID `developer_id.dZGJiMm`.
 
 ## Set it up

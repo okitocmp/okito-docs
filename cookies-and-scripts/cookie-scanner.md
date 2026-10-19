@@ -9,22 +9,43 @@ The cookie scanner opens your site in a real browser, visits your pages, accepts
 ## Run a scan
 
 1. Open **Cookie Manager** and select your website.
-2. Click **Scan**. The scan takes one to three minutes.
+2. Click **Scan**. The scan usually takes one to five minutes, longer when many scans are running.
 3. Review the results: each cookie's name, domain, category, provider, duration and purpose, when known.
 
 The scanner starts on your home page and follows links to other pages on the same domain, preferring pages like products, categories, cart, account and contact. How many pages it visits depends on your plan (5 on Free, up to 200 on Professional); see [Plans and limits](../getting-started/plans-and-limits.md).
 
-A first scan runs automatically when you add a website.
+A first scan runs automatically when you add a website, and in the Shopify app when the app connects your store. Cookie Manager shows it while it runs and lists the cookies and services when it finishes. Only one scan of a website runs at a time: clicking **Scan** during a scan follows the running scan.
+
+## When a scan can't open your site
+
+If the scanner can't open your site, the scan is marked as failed, Cookie Manager shows why, and nothing in your cookie list changes. A failed scan doesn't count toward your monthly scans. Common reasons:
+
+* **The domain doesn't point to the site yet**: check the domain's DNS records, then scan again. The scanner also tries the `www.` address of your domain.
+* **The store is password protected**: a Shopify store before launch only shows its password page. Remove the storefront password in Shopify (**Online Store > Preferences**), then scan again. In the Shopify app, Okito also scans the store by itself once it's open; see [Shopify](../installation/shopify.md#password-protected-stores). A Shopify development store keeps its password until it moves to a paid Shopify plan, so it can't be scanned before then.
+* **The scanner is busy**: try again in a few minutes.
+
+If the first scan of a new website fails, Okito tries it again automatically every few hours, up to 12 times during the website's first 30 days.
 
 ## After a scan
 
-* **Categories**: known cookies are categorised automatically. Check unknown ones and move them to the right category.
+* **Categories**: known cookies are categorised automatically. Check unknown ones and move them to the right category. A category you choose is marked **Set by you**, and later scans never change it.
+* **Browser storage**: items the site keeps in the browser's local storage or session storage are listed too, labelled **Local storage** or **Session storage**.
 * **Services**: cookies from known providers are grouped into [services](services.md) (for example Google Analytics, Meta Pixel) so visitors can switch them on and off.
 * **Removed cookies**: cookies from earlier scans that were not found again are archived and no longer shown in the banner.
 * **Consent mode check**: each scan also checks every page for Google consent mode gaps. See [Consent mode check](../google/consent-mode-check.md).
 * **Tracking tag check**: each scan also lists tracking tags in your pages that browsers load before consent, with the marked tag to use instead. See [Tracking tags that load before consent](script-blocking.md#tracking-tags-that-load-before-consent).
 * **Banner update**: the banner's cookie list and the script blocking rules update right after the scan.
 * **Cookie table**: the [cookie table on your cookie policy page](cookie-table.md) shows the new list.
+
+## How cookies are categorised
+
+Okito looks a cookie up in its catalogue of known cookies, by name and by the domain that set it. A cookie set by a known vendor's domain (for example Yandex, Meta, Google Ads or Microsoft Clarity) goes to that vendor's category and service. A cookie that isn't in the catalogue gets a category from its name only when the name clearly says what it is (for example `session` or `cart`). Otherwise it stays **Uncategorized** for you to review. A third-party cookie is never put in Necessary by its name alone.
+
+When Okito improves its catalogue, cookies that were categorised automatically can move to another category or service. Cookie Manager then shows a notice listing each change. Click **Keep my previous category** to undo a change; the cookie is then marked **Set by you**. Visitors keep their choices: a cookie that moves follows the visitor's choice for its new category, and nobody is asked again.
+
+{% hint style="info" %}
+Categories matter for script blocking: an analytics or advertising item is held until the visitor consents, and the cookies of every category the visitor refuses are removed. If a site feature (a cart, a login) stops working for visitors who refuse, check that its cookies are in Necessary.
+{% endhint %}
 
 ## Scheduled scans
 

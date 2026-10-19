@@ -1,10 +1,8 @@
 ---
-description: >-
-  Google Consent Mode v2 in Okito, from setup wizard to a check across all your
-  pages.
+description: Google Consent Mode v2 in Okito, from setup wizard to a check across all your pages.
 ---
 
-# Launch: Google Consent Mode v2
+# Launch: Google Consent Mode v2 in Okito
 
 _September 2026_
 
@@ -26,7 +24,7 @@ Okito sets the consent mode **default** before your Google tags run and sends th
 * **Okito CMP** template in the Google Tag Manager Community Template Gallery
 * WordPress plugin, Shopify app, Webflow app and Framer plugin
 
-[Installation →](../installation/installation.md)
+[Installation →](../installation/README.md)
 
 ### A banner template for Google's requirements
 
@@ -57,4 +55,4 @@ Google Consent Mode and IAB TCF are included in the **Standard** and **Professio
 
 New to Okito? Start with the [Quick start](../getting-started/quick-start.md). Already using Okito? Open Banner Builder → General → **Google tags** and run a cookie scan to see your consent mode check.
 
-Questions? Email [info@okito.com](mailto:info@okito.com).
+Questions? Email [support@okito.com](mailto:support@okito.com).

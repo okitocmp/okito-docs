@@ -13,7 +13,7 @@ description: Check these before real visitors see your banner.
 
 ## Installation
 
-- [ ] The Okito script is on **every** page, including checkout, 404 and landing pages.
+- [ ] The Okito script is on **every** page you serve, including 404 and landing pages, and checkout pages on your own site. A checkout hosted by your platform may not load it: Shopify's checkout doesn't, and the visitor's choice reaches Shopify through its Customer Privacy API instead (see [Shopify](../installation/shopify.md#checkout)).
 - [ ] The script is installed **once**: not in the theme *and* a plugin *and* GTM.
 - [ ] In advanced mode, the Consent Mode snippet and the Okito script are at the top of `<head>`, **above** Google Tag Manager and gtag.js. See [Load order](../google/load-order.md).
 - [ ] Your Content-Security-Policy allows `https://cdn.okito.com`. See [CSP, performance and SPAs](../developers/csp-and-performance.md).

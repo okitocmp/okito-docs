@@ -10,17 +10,24 @@ Debug mode stays on for the browser tab. Open a page with `?okito_debug=0` to tu
 
 ## Green: everything is in order
 
+![Debug mode: green](../.gitbook/assets/debug-mode-green.png)
+
 * **The Consent Mode default was set before any Google tag.** Nothing to do.
+* **The Consent Mode default was set in Google Tag Manager's Consent Initialization (for example by the Okito GTM template), before any Google tag.** Nothing to do. A tag on GTM's **Consent Initialization** trigger, such as the [Okito GTM template](../installation/google-tag-manager.md), puts the default in the data layer after `gtm.js`, but GTM runs it before any other tag.
 * **No Google tag ran before Okito; Okito sets the Consent Mode default now.** Also fine.
 * **A Google tag was queued before Okito loaded but had not run yet; Okito put the Consent Mode default in front of it.** Google still reads the default first on this page view. This depends on Okito loading before Google's script, so for every page view to be safe, put the Consent Mode snippet above Google Tag Manager / gtag.js ([Load order](load-order.md)).
 * **The IAB TCF API (`__tcfapi`) is available to Google tags.** (TCF sites.)
 
 ## Yellow: a Google tag ran first
 
+![Debug mode: Google Tag Manager ran first](../.gitbook/assets/debug-mode-gtm-late.png)
+
 The box names the tag that ran too early (for example `gtag("js")` or Google Tag Manager) and tells you what to do:
 
 1. First check whether that tag is served through [Google tag gateway](google-tag-gateway.md) (a path on your own domain). If it is, follow the Google tag gateway steps.
 2. Otherwise move the Okito Consent Mode snippet and the Okito script above Google Tag Manager / gtag.js in `<head>`. See [Load order](load-order.md).
+
+A default set on GTM's Consent Initialization trigger is shown in green (see above) when Google's consent state shows it was in time, or, with the Okito GTM template, when no gtag.js command was queued ahead of it. This never applies when Google records that the default was set late.
 
 On IAB TCF sites, it also warns when Google tags ran before the TCF API was available. With the GTM template, tick **My banner uses IAB TCF** in the tag; see [IAB TCF sites](../installation/google-tag-manager.md#iab-tcf-sites).
 

@@ -26,6 +26,7 @@ In the **Content** tab, choose a language and edit:
 * Category names and descriptions in the preference centre
 * Cookie list labels (Cookie, Duration, Description, Always Active)
 * **Links** to your privacy policy, cookie policy and Aydınlatma Metni (see below)
+* **Blocked embeds**: the text shown in place of a video, map or other embed that waits for consent (see below)
 
 Okito ships default banner messages for the GDPR template in English, Turkish, German, French, Spanish and Italian (KVKK wording in Turkish and English), and titles and button labels in 50+ languages. Adapt the defaults to your own processing and privacy policy.
 
@@ -41,7 +42,20 @@ Like the texts, the links belong to the language you are editing, so each langua
 
 The preference window shows the same links (the classic window, the design themes' and IAB TCF's). The links open in a new tab and use the visitor's language for the privacy policy label. An address that doesn't start with `http://` or `https://` is not shown. The Banner Builder preview shows them as the banner will.
 
+With **Show Google Privacy Policy** on (Content → Preference Centre), the preference window also shows a **Google Privacy Policy** link after yours, in the visitor's language. It opens Google's page on how Google uses information from sites that use its services (`business.safety.google/privacy`). The setting applies to every language. The first layer doesn't show this link.
+
 In mobile apps, the Okito SDK banner shows the same links in the app's language, the Aydınlatma Metni when the app's country in Okito is Türkiye and the device's region is Türkiye. A privacy policy address passed to the SDK in the app's code is used instead of the dashboard's.
+
+### Blocked embeds placeholder
+
+Videos, maps and other embeds (YouTube, Vimeo, Google Maps and others; see [Embedded videos, maps and posts](../cookies-and-scripts/script-blocking.md#embedded-videos-maps-and-posts)) load only after the visitor allows their cookies. Until then a box stands in their place, with a message and a button that opens the cookie settings.
+
+In **Content → Blocked embeds** you can replace both texts for the language you are editing:
+
+* **Message**: up to 300 characters. `{name}` is replaced with the name of the service, for example "Watch this {name} video once you allow its cookies." becomes "Watch this YouTube video once you allow its cookies."
+* **Button**: up to 50 characters.
+
+Leave a field empty to keep the default, which is translated into every language the banner supports; the field shows it in grey. The texts are plain text: HTML is not applied. In the Shopify app, the same fields are in **Banner Build → Content → Blocked embeds**.
 
 ### Links in the message
 

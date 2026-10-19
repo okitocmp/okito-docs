@@ -25,7 +25,7 @@ Add the `[okito_cookie_table]` shortcode to your cookie policy page (Okito plugi
 
 ## Shopify
 
-In the theme editor, open the template of your cookie policy page, add a section or block, and pick **Cookie table** under Apps. The Okito Cookie Consent app embed must be on.
+In the Okito app, **Settings → Cookie table → Add cookie table** (also at the bottom of **Cookie Manager → Cookies**) opens the theme editor with the **Cookie table** block added to the default page template. The block shows on every page that uses that template: if other pages use it too, give your cookie policy page its own template (theme editor: **Pages → Create template**, then choose it under **Theme template** on the page) and add the block there (**Add section → Apps → Cookie table**). Click **Save**. The app's **Cookie banner** embed must be on (see [Shopify](../installation/shopify.md#install)).
 
 ## Styling
 

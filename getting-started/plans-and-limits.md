@@ -17,7 +17,8 @@ Okito has four plans. **Each website has its own plan**: you can run one site on
 | Advanced customisation and themes | | ✓ | ✓ | ✓ |
 | [Logo and custom CSS](../banner/layout-and-position.md#logo-and-custom-css) | | | | ✓ |
 | Multiple languages | | ✓ | ✓ | ✓ |
-| Automatic script blocking | | ✓ | ✓ | ✓ |
+| Automatic blocking (known trackers and the scripts your scans find) | ✓ | ✓ | ✓ | ✓ |
+| Your own [blocking rules](../cookies-and-scripts/script-blocking.md#blocking-rules) | | ✓ | ✓ | ✓ |
 | Geo-targeting (GDPR + US, banner only where required) | | ✓ | ✓ | ✓ |
 | Policy generator | | ✓ | ✓ | ✓ |
 | **Google Consent Mode v2**, basic | ✓ | ✓ | ✓ | ✓ |
@@ -39,4 +40,10 @@ A pageview is a full page load that runs the Okito banner script. Reloading a pa
 
 ## Shopify
 
-On Shopify, you pay for Okito through Shopify App Pricing, with the same four plans. See [Shopify](../installation/shopify.md).
+On Shopify, you pay for Okito through Shopify App Pricing, with the same four plans; prices are on the app's plan page in Shopify. The store's plan in Shopify alone decides its limits and features, in the app and on the storefront:
+
+* The app locks what the plan doesn't include, as the dashboard does. Colours are open on every plan. Every **Upgrade your plan** link opens the app's plan page in Shopify.
+* In Banner Build, a setting the plan doesn't include is saved as the plan allows (for example basic consent mode below Standard); see [Banner Build and your plan](../installation/shopify.md#banner-build-and-your-plan).
+* The app's home page and **Settings** show the month's pageviews against the plan's limit; see [Monthly pageviews](../installation/shopify.md#monthly-pageviews).
+* If you cancel a paid plan in Shopify, Okito moves the store to Free on its own; see [Cancel your paid plan](../installation/shopify.md#cancel-your-paid-plan).
+* If you uninstall the app, Okito pauses the store's website and moves it to Free. About 48 hours later, Shopify asks Okito to erase the store's data; see [Uninstall the app](../installation/shopify.md#uninstall-the-app).
