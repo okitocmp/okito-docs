@@ -15,6 +15,12 @@ If you use Google consent mode without IAB TCF, we recommend the Google Consent 
 
 The setup wizard applies the template automatically when **Enable Google Consent Mode** is selected.
 
+### In the Shopify app
+
+1. Open **Banner Build**, go to the **Content** tab and choose the language to edit.
+2. Under **Message** in **Cookie Notice**, you see **Recommended for Google Consent Mode** when IAB TCF is off. It is not shown for the US State Laws text.
+3. Click **Use the Google Consent Mode template**, repeat for each language, then save the banner.
+
 ## What it contains
 
 * **The purpose of the data collection**: operating the site, measuring how visitors use it (analytics) and personalising content and ads.
@@ -23,4 +29,4 @@ The setup wizard applies the template automatically when **Enable Google Consent
 
 ## Editing the text
 
-You can adapt the text to your own processing and privacy policy. Keep these three parts. While the Google link is in the message, Banner Builder shows **Google Consent Mode template in use**.
+You can adapt the text to your own processing and privacy policy. Keep these three parts. While the Google link is in the message, Banner Builder and the Shopify app's Banner Build show **Google Consent Mode template in use**.
