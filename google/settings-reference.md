@@ -30,13 +30,17 @@ Each setting starts with Google's explanation, followed by how Okito sets it.
 
 **Google:** Sets the default consent state only for users in the listed regions (ISO 3166-2 country or subdivision codes). A default without `region` applies to all other users.
 
-**Okito:** The Okito snippet sets a denied default for the regions where your banner asks for consent before tags run, and a separate default for all other visitors. Banner Builder → General → **Where consent is not required** controls whether that second default is granted or denied. With GTM you can add your own region defaults in the template.
+**Okito:** The Okito snippet sets a denied default for the regions where your banner asks for consent before tags run, and a separate default for all other visitors. Banner Builder → General → **Where consent is not required** controls whether that second default is granted or denied. The United States is in the denied list only when US visitors get the GDPR banner: when they get the US State Laws notice (opt-out), they start granted. The WordPress plugin (from 1.1.8) and the Shopify app follow these settings on their own; copy the snippet again after you change them. With GTM you can add your own region defaults in the template.
+
+When the snippet, the WordPress plugin or the Shopify app has set the default, the Okito script does not add a second one: Google Tag Assistant shows one default. Only when the default on the page does not match what Okito decides for the visitor (for example an older snippet that still lists the United States) does the Okito script send one consent update before the visitor chooses.
 
 ### `wait_for_update`
 
 **Google:** Sets how many milliseconds tags wait for a consent update command before sending data.
 
 **Okito:** 500 ms for regions where the banner asks for consent; 0 elsewhere, or 500 ms when the browser sends a Global Privacy Control signal.
+
+With Consent Mode on, the earlier choice of a returning visitor who got the opt-in banner (not the US State Laws notice) does not wait for the Okito script: the Consent Mode snippet, the WordPress plugin, the Shopify app and the GTM template (from its next gallery release) apply it as a consent update right after the default, before any Google tag. They read the Consent Mode state the Okito script saved for that choice (`okito_gcm_state` in the browser's local storage, a necessary Okito item) and apply it only while the choice is still stored and valid for your site and the browser sends no Global Privacy Control signal; otherwise the Okito script applies the choice when it loads, as before. Copy the snippet again to get this.
 
 ### `ads_data_redaction`
 
@@ -48,7 +52,7 @@ Each setting starts with Google's explanation, followed by how Okito sets it.
 
 **Google:** When `ad_storage` is denied, passes ad click information (such as gclid and dclid) and other information about the ad click in the URLs of internal links, so conversions can be measured without cookies.
 
-**Okito:** Off by default. Turn it on in Banner Builder → General → **Pass ad click information through URLs**; your internal link URLs then carry these parameters. The GTM template has the same option. On WordPress, see the [plugin filters](../installation/wordpress.md#filters-for-developers).
+**Okito:** Off by default. Turn it on in Banner Builder → General → **Pass ad click information through URLs**; your internal link URLs then carry these parameters. It is set with the consent mode default, before any Google tag: by the snippet (copy it again after you turn it on), the WordPress plugin (from 1.1.8) and the Shopify app. The GTM template has the same option. On WordPress, the [plugin filters](../installation/wordpress.md#filters-for-developers) still override it. Without a snippet, the Okito script sets it when it loads.
 
 ### `developer_id.dZGJiMm`
 

@@ -9,7 +9,7 @@ When a visitor is signed in to your site, Okito can sync their consent choice ac
 ## Turn it on
 
 1. In Banner Builder → General, turn on **Cross-Device Consent** and save. (In the Shopify app, see [Shopify](#shopify).)
-2. Copy the **cross-device signing key** that appears in Banner Builder and keep it on your server only (for example in an environment variable). Don't put it in your pages.
+2. Copy the **cross-device signing key** that appears in Banner Builder and keep it on your server only (for example in an environment variable). Don't put it in your pages. Only the person who added the website and the team's Owner and Admins see the key; other Editors and Viewers don't.
 3. For the signed-in user, have your server make two values:
    * `uid`: the hex SHA-256 of the user's stable ID from your system,
    * `signature`: the hex HMAC-SHA256 of `uid` with the signing key.
@@ -56,7 +56,7 @@ OkitoCMP.identify(null);
 
 Without it, anyone who guesses a user's ID (an email address or a sequential number) could read that user's choices from Okito, or record a choice in their name that their other devices would then apply. With the signature, only your server, which knows the signing key, can link a choice to a user. Okito doesn't sync or link anything without a valid signature: the choice is still recorded, for that device only.
 
-If the key leaks, click **New key** in Banner Builder (or in the Shopify app) and put the new key on your server. The old key stops working within a few minutes; until your server signs with the new key, choices are not synced.
+If the key leaks, or an Admin who could see it leaves your team, an Owner or Admin clicks **New key** in Banner Builder (or in the Shopify app) and puts the new key on your server. The old key stops working within a few minutes; until your server signs with the new key, choices are not synced. The [audit logs](../account/team-and-roles.md#audit-logs) record who loaded the key in Banner Builder and who replaced it, and when.
 
 ## Shopify
 

@@ -6,10 +6,16 @@ description: Connect Webflow and Okito installs the script for you.
 
 ## With the Okito app (recommended)
 
-1. Install the **Okito Cookie Consent** app from the Webflow Apps marketplace, or open **Webflow** in the Okito dashboard and click **Connect**.
-2. Authorise the app for your Webflow site. Okito asks only for permission to read your sites and manage custom code.
-3. Sign in to Okito (or create an account) and pick the Okito website that matches your Webflow site's domain.
+1. Install the **Okito Cookie Consent** app from the Webflow Apps marketplace (or open it from your site in Webflow).
+2. Sign in to Okito, or create a free account. Webflow then asks you to authorise Okito for your site. Okito asks only for permission to read your sites and manage custom code.
+3. Okito shows the site you authorised. If an Okito website with the same domain exists, click **Connect**; otherwise choose your country or region and Okito creates the website for you. If you authorised several sites, pick the one to set up: nothing is chosen for you.
 4. Okito adds its script to your site's custom code. **Publish** your Webflow site.
+
+Starting from the Okito dashboard works too: open **Webflow**, choose the project and click **Connect Webflow**.
+
+**A second Webflow site.** Install the app on that site too; your first site stays connected. Each Okito website has its own plan: your account's free website is used by the first one, so a second website needs a paid plan, which you choose right there (see [Plans and limits](../getting-started/plans-and-limits.md)). Your Webflow authorisation is kept while you pay, so you can come back and finish later.
+
+**Opening the app again** (from the Apps panel, Site settings or the marketplace) shows your connected sites and their script status. You don't have to authorise Okito again.
 
 The app adds one small loader, `https://cdn.okito.com/wf/1.0.0/YOUR_WEBSITE_KEY.js`, which loads your Okito script. Webflow pins it with an integrity (SRI) hash under version `1.0.0`. The loader is the same for every site and never changes, so changes to your banner (texts, languages, an [A/B test](../banner/ab-testing.md)) and Okito updates apply without applying the script again or publishing.
 
@@ -33,10 +39,11 @@ Custom code requires a paid Webflow site plan.
 
 **Installed with the app**
 
-1. In the Okito dashboard, open **Webflow** and click **Disconnect**. Okito removes its script from your site's custom code and ends its access to your Webflow site. You can also uninstall the **Okito Cookie Consent** app in Webflow (**Site settings → Apps & integrations**); Okito then removes its script too.
-2. Check **Site settings → Custom code**. If Webflow ended the app's access before Okito could remove the script, an Okito script (`OkitoCookieConsent`, loading from `cdn.okito.com`) can still be there: remove it.
-3. If you pasted the early blocker line by hand, delete it from **Head code**.
-4. **Publish** your Webflow site. Until you publish, the live site keeps the banner.
+1. In the Okito dashboard, open **Webflow** and click **Disconnect**. Okito removes its script from your site's custom code and unlinks the Okito website. Okito stays authorised in Webflow, so you can connect the site again later without authorising it again.
+2. To remove Okito's access to your site completely, uninstall the **Okito Cookie Consent** app in Webflow (**Site settings → Apps & integrations**). Okito then deletes its access to the site.
+3. Check **Site settings → Custom code**. If Okito could not remove its script (for example because the app was uninstalled first), an Okito script (`OkitoCookieConsent`, loading from `cdn.okito.com`) can still be there: remove it.
+4. If you pasted the early blocker line by hand, delete it from **Head code**.
+5. **Publish** your Webflow site. Until you publish, the live site keeps the banner.
 
 **Installed by hand**
 

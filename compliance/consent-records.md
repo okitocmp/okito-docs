@@ -40,6 +40,8 @@ In Consent Management, choose a period (all records, the last 30 days, 90 days o
 
 An export holds at most 200,000 records, the newest first. If there are more, the end date is set to the day of the oldest record in the file: download again for the older records (records of that day are in both files). The file is UTF-8, so spreadsheet apps open it with the right characters. Every export is written to your audit log.
 
+Owners, Admins and Editors can download. Viewers see the records but not **Download CSV**.
+
 ## Using records
 
 * **Proof of consent**: show when and how a visitor consented, for example in a complaint or audit.

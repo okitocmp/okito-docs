@@ -29,3 +29,9 @@ See [Consent mode settings reference](../google/settings-reference.md) and [Word
 {% hint style="warning" %}
 Put a cookie in Necessary only if the site can't work without it. Analytics and advertising cookies are never necessary.
 {% endhint %}
+
+## Google reCAPTCHA
+
+Okito lists Google reCAPTCHA (the `_GRECAPTCHA` cookie and its scripts) as **Necessary**: it protects the forms the visitor submits from spam and abuse, and blocking it until consent breaks those forms (reCAPTCHA v3, for example in Contact Form 7, needs its token when the form is sent). Okito does not block it, and the consent record and cookie table list it as necessary. Mention reCAPTCHA in your privacy policy, as Google's terms ask.
+
+Some data protection authorities consider that reCAPTCHA needs consent because Google also uses the data for its own purposes. If you follow that view, move the reCAPTCHA service to **Functional** under [Services](services.md). The consent record follows that category, and Okito then holds the reCAPTCHA scripts it can intercept (those your site adds after the Okito script has loaded) until the visitor accepts Functional. A reCAPTCHA `<script>` tag written directly in your page's HTML starts before Okito can stop it: mark it yourself (see [Mark scripts manually](manual-script-marking.md)) with `data-cookie-category="functional"`, or the record will say "refused" while reCAPTCHA runs. Your forms then need another spam check for visitors who refuse.

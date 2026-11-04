@@ -7,7 +7,7 @@ description: Install the Okito Cookie Consent app from the Shopify App Store.
 ## Install
 
 1. Install **Okito Cookie Consent** from the Shopify App Store.
-2. Choose where your business is located. Okito keeps your data in the matching region (the EU or Türkiye); you can't change it later.
+2. Choose where your business is located. Okito stores your store's website, banner and consent records in the matching region (the EU or Türkiye); you can't change it later. The Shopify app itself, with your store's app settings and sign-in session, runs in Türkiye.
 3. Set up the banner: consent template, language, layout and position. You can change them later in **Banner Build**.
 4. Choose a plan on the app's plan page in Shopify. Shopify bills it; see [Plans and billing](#plans-and-billing).
 5. Once you have chosen a plan, the app creates your Okito account, website, default banner and Website Key, and fills them in on the app's **Settings** page.

@@ -34,7 +34,7 @@ By default, visitors in every region see the banner. You can hide it for visitor
 
 ### Where is my data stored?
 
-In the region you chose when you created your account: Türkiye or the EU. See [Data regions](../getting-started/data-regions.md).
+Your websites, settings and consent records are stored in the region you chose when you created your account: Türkiye or the EU. See [Data regions](../getting-started/data-regions.md) for what is shared between regions.
 
 ### Can visitors change their mind?
 

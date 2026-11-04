@@ -14,7 +14,7 @@ A visitor's choice is stored in their browser. Okito shows the banner again when
 
 ## Ask every visitor again
 
-After a meaningful change, such as new banner text, a new cookie policy or a new category, open Banner Builder → General and click **Ask every visitor again**. Every visitor who made their choice before that moment sees the banner on their next page view. Until they choose again, their earlier choice stays in effect. Small fixes, such as correcting a typo, don't need it.
+After a meaningful change, such as new banner text, a new cookie policy or a new category, open Banner Builder → General and click **Ask every visitor again** (Owners, Admins and Editors of the website can). Every visitor who made their choice before that moment sees the banner on their next page view. Until they choose again, their earlier choice stays in effect. Small fixes, such as correcting a typo, don't need it.
 
 It applies to websites and to apps with the Okito mobile SDKs.
 

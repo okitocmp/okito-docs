@@ -10,6 +10,10 @@ The **Theme** tab offers ready-made designs: **Classic**, **Tide**, **Harbor**, 
 
 Themes other than Classic need the Beginner plan or higher.
 
+Every built-in theme, in its Light and Dark colours, gives the button text a contrast of at least 5:1, the level [IAB TCF](../compliance/iab-tcf.md) asks of the banner's buttons.
+
+Choosing a theme copies its colours into the **Colors** tab. Your saved colours are never changed for you: when a theme's colours are updated, a banner saved earlier keeps its old ones until you pick the theme again, or click **Light** or **Dark** in the Colors tab, and save. If **Light** or **Dark** is already selected, Banner Builder's preview shows the theme's new colours, but your live banner gets them only after you click that button again and save.
+
 ## Colours
 
 In the **Colors** tab, choose **Light**, **Dark** or **Custom**. With Custom you set:
