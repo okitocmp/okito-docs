@@ -39,11 +39,16 @@ Custom code requires a paid Webflow site plan.
 
 **Installed with the app**
 
+Follow these steps in order. Uninstalling the app does not take Okito's script off your site: if you uninstall first, Okito can't reach the site any more, and the script and the banner stay on the published site.
+
 1. In the Okito dashboard, open **Webflow** and click **Disconnect**. Okito removes its script from your site's custom code and unlinks the Okito website. Okito stays authorised in Webflow, so you can connect the site again later without authorising it again.
-2. To remove Okito's access to your site completely, uninstall the **Okito Cookie Consent** app in Webflow (**Site settings → Apps & integrations**). Okito then deletes its access to the site.
-3. Check **Site settings → Custom code**. If Okito could not remove its script (for example because the app was uninstalled first), an Okito script (`OkitoCookieConsent`, loading from `cdn.okito.com`) can still be there: remove it.
-4. If you pasted the early blocker line by hand, delete it from **Head code**.
-5. **Publish** your Webflow site. Until you publish, the live site keeps the banner.
+2. If you pasted the early blocker line by hand, delete it from **Site settings → Custom code → Head code**.
+3. **Publish** your Webflow site. Until you publish, the live site keeps the banner.
+4. To remove Okito's access to your site completely, uninstall the **Okito Cookie Consent** app in Webflow (**Site settings → Apps & integrations**). Okito then deletes its access to the site.
+
+**If you uninstalled the app first**
+
+Okito shows the site as **Needs authorization**, and the banner keeps showing. Click **Authorize again**, then follow the steps above. To stop the banner without authorising again, turn the website off on the **Websites** page in Okito.
 
 **Installed by hand**
 
