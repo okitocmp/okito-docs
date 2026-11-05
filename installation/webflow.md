@@ -17,7 +17,7 @@ Starting from the Okito dashboard works too: open **Webflow**, choose the projec
 
 **Opening the app again** (from the Apps panel, Site settings or the marketplace) shows your connected sites and their script status. You don't have to authorise Okito again.
 
-The app adds one small loader, `https://cdn.okito.com/wf/1.0.0/YOUR_WEBSITE_KEY.js`, which loads your Okito script. Webflow pins it with an integrity (SRI) hash under version `1.0.0`. The loader is the same for every site and never changes, so changes to your banner (texts, languages, an [A/B test](../banner/ab-testing.md)) and Okito updates apply without applying the script again or publishing.
+The app adds one small loader, `https://cdn.okito.com/wf/1.0.1/YOUR_WEBSITE_KEY.js`, which loads your Okito script (sites connected earlier may have `1.0.0`). Webflow pins it with an integrity (SRI) hash. The loader is the same for every site and never changes, so changes to your banner (texts, languages, an [A/B test](../banner/ab-testing.md)) and Okito updates apply without applying the script again or publishing.
 
 **Connected your site before the loader?** Then the app registered the Okito script itself (`/js/YOUR_WEBSITE_KEY`), whose pinned hash stops matching when your banner settings change or Okito updates, and the browser then refuses to load the banner. Switch once: open **Webflow** in the Okito dashboard, click **Update Okito script**, then **Publish** your Webflow site.
 
@@ -39,7 +39,7 @@ Custom code requires a paid Webflow site plan.
 
 **Installed with the app**
 
-Follow these steps in order. Uninstalling the app does not take Okito's script off your site: if you uninstall first, Okito can't reach the site any more, and the script and the banner stay on the published site.
+Follow these steps in order. Uninstalling the app does not take Okito's script off your site: if you uninstall first, Okito can't reach the site any more, and the script stays in the published HTML.
 
 1. In the Okito dashboard, open **Webflow** and click **Disconnect**. Okito removes its script from your site's custom code and unlinks the Okito website. Okito stays authorised in Webflow, so you can connect the site again later without authorising it again.
 2. If you pasted the early blocker line by hand, delete it from **Site settings → Custom code → Head code**.
@@ -48,7 +48,12 @@ Follow these steps in order. Uninstalling the app does not take Okito's script o
 
 **If you uninstalled the app first**
 
-Okito shows the site as **Needs authorization**, and the banner keeps showing. Click **Authorize again**, then follow the steps above. Don't click **Disconnect** before you authorise again: Okito can't reach the site, so the script stays, and the site leaves your list. If that happened, connect the site to Okito again, then follow the steps above. To stop the banner without authorising again, turn the website off on the **Websites** page in Okito.
+Okito shows the site as **Needs authorization**, and the banner stops within minutes (25 at most). The script stays in the published HTML until you authorise again, disconnect and publish. While the banner is stopped, tools on your site run without consent handling. If you pasted the early blocker line by hand, it keeps holding known trackers and embeds until you delete it. Okito emails you when this happens.
+
+- **To bring the banner back:** click **Authorize again**. You don't need to publish.
+- **To remove the script:** click **Authorize again**, then follow the steps above. Don't click **Disconnect** before you authorise again: Okito can't reach the site, so the script stays, and the site leaves your list. If that happened, connect the site to Okito again, then follow the steps above.
+
+If your site still has the `1.0.0` loader, the banner keeps showing after you uninstall. To stop it without authorising again, turn the website off on the **Websites** page in Okito. The same goes for an agency's client site in a different [region](../getting-started/data-regions.md) from the account that connected it. A banner you pasted by hand with the same key is never affected.
 
 **Installed by hand**
 
