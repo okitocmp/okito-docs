@@ -48,7 +48,7 @@ Follow these steps in order. Uninstalling the app does not take Okito's script o
 
 **If you uninstalled the app first**
 
-Okito shows the site as **Needs authorization**, and the banner keeps showing. Click **Authorize again**, then follow the steps above. To stop the banner without authorising again, turn the website off on the **Websites** page in Okito.
+Okito shows the site as **Needs authorization**, and the banner keeps showing. Click **Authorize again**, then follow the steps above. Don't click **Disconnect** before you authorise again: Okito can't reach the site, so the script stays, and the site leaves your list. If that happened, connect the site to Okito again, then follow the steps above. To stop the banner without authorising again, turn the website off on the **Websites** page in Okito.
 
 **Installed by hand**
 
