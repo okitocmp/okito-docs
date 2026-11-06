@@ -4,7 +4,7 @@ description: What each plan includes. Prices are on the pricing page.
 
 # Plans and limits
 
-Okito has four plans. **Each website has its own plan**: you can run one site on Professional and another on Free, and upgrading one website doesn't change the others. Pageview and scan limits apply per website. Current prices are on the [pricing page](https://app.okito.com/pricing).
+Okito has four plans. **Each website has its own plan**: you can run one site on Professional and another on Free, and upgrading one website doesn't change the others. Pageview and scan limits apply per website. Current prices are on the [pricing page](https://okito.com/pricing/).
 
 | | Free | Beginner | Standard | Professional |
 | --- | --- | --- | --- | --- |

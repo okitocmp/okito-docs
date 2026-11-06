@@ -48,7 +48,7 @@ Follow these steps in order. Uninstalling the app does not take Okito's script o
 
 **If you uninstalled the app first**
 
-Okito shows the site as **Needs authorization**, and the banner stops within minutes (25 at most). The script stays in the published HTML until you authorise again, disconnect and publish. While the banner is stopped, tools on your site run without consent handling. If you pasted the early blocker line by hand, it keeps holding known trackers and embeds until you delete it. Okito emails you when this happens.
+Okito shows the site as **Needs authorization**, and the banner normally stops within about 25 minutes. The script stays in the published HTML until you authorise again, disconnect and publish. While the banner is stopped, tools on your site run without consent handling. If you pasted the early blocker line by hand, it keeps holding known trackers and embeds until you delete it. Okito emails you when this happens.
 
 - **To bring the banner back:** click **Authorize again**. You don't need to publish.
 - **To remove the script:** click **Authorize again**, then follow the steps above. Don't click **Disconnect** before you authorise again: Okito can't reach the site, so the script stays, and the site leaves your list. If that happened, connect the site to Okito again, then follow the steps above.
